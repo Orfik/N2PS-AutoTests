@@ -1,7 +1,7 @@
 <suite name="Auth Suite" verbose="1" >
     <test name="Auth">
         <classes>
-            <class name="com.auth.Auth" />
+            <class name="com.tests.Auth" />
         </classes>
     </test>
 </suite>
