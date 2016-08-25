@@ -12,10 +12,10 @@ public class BaseTestClass {
     protected WebDriver driver;
 
     @BeforeClass
-    public  void openBrowser() {
-        driver=new FirefoxDriver();
+    public void openBrowser() {
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(100, SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, SECONDS);
     }
 
     @AfterClass
