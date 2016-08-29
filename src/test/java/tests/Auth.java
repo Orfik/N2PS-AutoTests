@@ -1,6 +1,7 @@
 package tests;
 
 import dataproviders.DataProviderClass;
+import org.testng.annotations.Listeners;
 import pages.ProjectBoardPage;
 import pages.SignInPage;
 import pages.StudioHomePage;
@@ -17,6 +18,8 @@ import ru.yandex.qatools.allure.annotations.TestCaseId;
 
 
 import java.io.IOException;
+
+@Listeners (value=AllureTestListener.class)
 
 public class Auth extends BaseTest {
 
@@ -40,15 +43,11 @@ public class Auth extends BaseTest {
     @Stories("Incorrect login")
     @Test(description = "incorrect login", dataProvider = "usersCredentialsAndExpectedErrors", dataProviderClass = DataProviderClass.class)
     public void authInvalid(String login, String password, String expectedError) throws IOException {
-        try {
             singIn.openSinInPage();
             singIn.fillSignInForm(login, password);
             singIn.clickSignInButton();
             String text = errorMessage.getText();
             Assert.assertEquals(text, expectedError);
-        } catch (Exception e) {
-            Assert.fail();
-        }
     }
 
     @TestCaseId("2")
@@ -57,14 +56,10 @@ public class Auth extends BaseTest {
     @Description("successful authorization")
     @Test(description = "successful authorization", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void authSuccessfulAuth(String login, String password, String expectedUserName) throws IOException {
-        try {
             singIn.openSinInPage();
             singIn.fillSignInForm(login, password);
             singIn.clickSignInButton();
             studioHome.openStudioPage();
             Assert.assertTrue(projectBoard.getUserName().contains(expectedUserName));
-        } catch (Exception e) {
-            Assert.fail();
         }
-    }
 }
