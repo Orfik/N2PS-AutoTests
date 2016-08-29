@@ -8,7 +8,7 @@
     <artifactId>N2PS-AutoTests</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <suite.name>Chrome_testng.xml</suite.name>
+        <suite.name>FF_testng.xml</suite.name>
         <aspectj.version>1.8.5</aspectj.version>
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
         <selenium.version>3.0.0-beta2</selenium.version>
