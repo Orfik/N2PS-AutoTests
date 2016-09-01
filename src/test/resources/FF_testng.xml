@@ -1,9 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Auth Suite" verbose="1" >
+<suite name="Auth Suite" verbose="1">
     <parameter name="browser" value="firefox"/>
     <test name="Auth">
+      <!--  <groups>
+            <run>
+                <include name="create and use this project"/>
+            </run>
+        </groups>-->
         <classes>
-            <class name="tests.Auth" />
+            <class name="tests.Auth"/>
+            <class name="tests.CreationProject" />
         </classes>
     </test>
 </suite>

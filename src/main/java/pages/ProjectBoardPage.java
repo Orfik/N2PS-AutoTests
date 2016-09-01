@@ -3,21 +3,27 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class ProjectBoardPage {
+public class ProjectBoardPage extends BasePage {
 
     private WebDriver driver;
 
     @FindBy(xpath = ".//span[@class='userName']")
     private WebElement userName;
 
+    @FindBy(xpath = "//a[@href = '#choosedesign_popup']")
+    private WebElement linkNewProject;
+
     public ProjectBoardPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
-    public String getUserName () {
+    public String getUserName() {
         return userName.getText();
+    }
+
+    public DetailProjectPage createNewProject() {
+        linkNewProject.click();
+        return new DetailProjectPage(driver);
     }
 }

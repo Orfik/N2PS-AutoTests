@@ -3,7 +3,7 @@ package webDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class PrepareDrivers {
-    public static DesiredCapabilities capabilities;
+    private static DesiredCapabilities capabilities;
 
     public static DesiredCapabilities prepareFirefox() {
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\geckodriver.exe");

@@ -11,7 +11,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 public class AllureTestListener extends TestListenerAdapter {
 
     @Attachment(value = "{0}", type = "image/png")
-    public byte[] makeScreenShot(String testName, WebDriver driver) {
+    private byte[] makeScreenShot(String testName, WebDriver driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 

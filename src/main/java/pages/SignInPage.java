@@ -9,7 +9,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 public class SignInPage {
 
     private WebDriver driver;
-    public static final String URL_HOME = "https://stage.storied.co/auth/login";
+    private static final String URL_HOME = "https://stage.storied.co/auth/login";
 
     @FindBy(id= "login")
     private WebElement email;
