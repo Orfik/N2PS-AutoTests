@@ -43,9 +43,7 @@ public class Auth extends BaseTest {
     @Stories("Incorrect login")
     @Test(description = "incorrect login", dataProvider = "usersCredentialsAndExpectedErrors", dataProviderClass = DataProviderClass.class)
     public void authInvalid(String login, String password, String expectedError) throws IOException {
-            singIn.openSinInPage();
-            singIn.fillSignInForm(login, password);
-            singIn.clickSignInButton();
+            singIn.openSinInPage().fillSignInForm(login, password).clickSignInButton();
             String text = errorMessage.getText();
             Assert.assertEquals(text, expectedError);
     }
@@ -56,10 +54,7 @@ public class Auth extends BaseTest {
     @Description("successful authorization")
     @Test(description = "successful authorization", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void authSuccessfulAuth(String login, String password, String expectedUserName) throws IOException {
-            singIn.openSinInPage();
-            singIn.fillSignInForm(login, password);
-            singIn.clickSignInButton();
-            studioHome.openStudioPage();
+            auth(login, password);
             Assert.assertTrue(projectBoard.getUserName().contains(expectedUserName));
         }
 }
