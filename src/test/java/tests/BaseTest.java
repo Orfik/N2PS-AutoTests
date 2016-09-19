@@ -8,10 +8,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import pages.ProjectBoardPage;
+import pages.SignInPage;
+import pages.StudioHomePage;
 import ru.stqa.selenium.factory.WebDriverFactory;
 import ru.stqa.selenium.factory.WebDriverFactoryMode;
 import webDriver.PrepareDrivers;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -22,6 +26,9 @@ public class BaseTest {
     protected WebDriver driver;
     protected Wait fluentWait;
     private PrepareDrivers prepareDrivers;
+    private SignInPage signIn;
+    private StudioHomePage studioHome;
+    private ProjectBoardPage projectBoard;
     private static final Logger LOG = Logger.getLogger("MyWebDriverFactory");
 
     @Parameters("browser")
@@ -55,6 +62,14 @@ public class BaseTest {
     @AfterClass(alwaysRun = true)
     public void closeBrowser() {
         WebDriverFactory.dismissAll();
+    }
+
+    public void auth(String login, String password) throws IOException {
+        signIn = new SignInPage(driver);
+        studioHome = new StudioHomePage(driver);
+        projectBoard = new ProjectBoardPage(driver);
+        signIn.openSinInPage().fillSignInForm(login, password).clickSignInButton();
+        studioHome.openStudioPage();
     }
 
 }

@@ -1,6 +1,5 @@
 package pages;
 
-import blocks.ProjectSettingsBlock;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,15 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class DetailProjectPage extends BasePage {
 
-    private ProjectSettingsBlock projectSettingsBlock;
+    private static final String DEFAULTPROJECTNAME = "//span[@title = 'Untitled']";
+
+    private ProjectSettingsPage projectSettingsPage;
     @FindBy(xpath = "//div[@class='settings']/a")
     private WebElement projectSettingsIcon;
     @FindBy(xpath = "//a[@id='project_settings_link']")
     private WebElement projectSettingsLink;
+    @FindBy(xpath = DEFAULTPROJECTNAME)
+    private WebElement labelDefaultProjectName;
 
     public DetailProjectPage(WebDriver driver) {
         super(driver);
-        projectSettingsBlock = PageFactory.initElements(driver, ProjectSettingsBlock.class);
+        projectSettingsPage = PageFactory.initElements(driver, ProjectSettingsPage.class);
     }
 
     public DetailProjectPage openProjectSettingsHint() {
@@ -24,8 +27,12 @@ public class DetailProjectPage extends BasePage {
         return this;
     }
 
-    public ProjectSettingsBlock openProjectSettings() {
+    public ProjectSettingsPage openProjectSettings() {
         projectSettingsLink.click();
-        return new ProjectSettingsBlock();
+        return new ProjectSettingsPage(driver);
+    }
+
+    public static String getDEFAULTPROJECTNAME() {
+        return DEFAULTPROJECTNAME;
     }
 }

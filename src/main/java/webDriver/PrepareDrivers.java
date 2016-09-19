@@ -1,5 +1,6 @@
 package webDriver;
 
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class PrepareDrivers {
@@ -15,6 +16,10 @@ public class PrepareDrivers {
     public static DesiredCapabilities prepareChrome() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
         capabilities = DesiredCapabilities.chrome();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("no-sandbox");
+        options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         return capabilities;
     }
 }

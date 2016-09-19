@@ -26,7 +26,4 @@ public class DataProviderClass {
     public static Object[][] userValidCredentionals() {
         return new Object[][]{{"qa@storied.co", "zxc123", "Ellina_admin Frolova"}};
     }
-
-
-
 }

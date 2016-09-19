@@ -11,12 +11,14 @@ public class SignInPage {
     private WebDriver driver;
     private static final String URL_HOME = "https://stage.storied.co/auth/login";
 
-    @FindBy(id= "login")
+    @FindBy(id = "login")
     private WebElement email;
-    @FindBy(id="password")
+    @FindBy(id = "password")
     private WebElement password;
-    @FindBy(xpath= ".//button[text()='Sign in']")
+    @FindBy(xpath = ".//button[text()='Sign in']")
     private WebElement signInButton;
+    @FindBy(xpath = ".//div[@class='error']/p")
+    private WebElement errorMessage;
 
     public SignInPage(WebDriver driver) {
         this.driver = driver;
@@ -39,8 +41,12 @@ public class SignInPage {
     }
 
     @Step
-    public StudioHomePage clickSignInButton () {
+    public StudioHomePage clickSignInButton() {
         signInButton.click();
         return new StudioHomePage(driver);
+    }
+
+    public String getErrorMessage() {
+        return errorMessage.getText();
     }
 }

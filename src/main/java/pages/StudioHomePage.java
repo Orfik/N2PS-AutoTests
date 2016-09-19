@@ -15,7 +15,7 @@ public class StudioHomePage {
 
     public StudioHomePage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     @Step
