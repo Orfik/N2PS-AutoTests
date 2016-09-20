@@ -26,4 +26,9 @@ public class DataProviderClass {
     public static Object[][] userValidCredentionals() {
         return new Object[][]{{"qa@storied.co", "zxc123", "Ellina_admin Frolova"}};
     }
+
+    @DataProvider(name = "SEO")
+    public static Object[][] seoValues() {
+        return new Object[][]{{"test description", "h1 test", "h2 test", "http://baseurl.com", "111", "111"}};
+    }
 }

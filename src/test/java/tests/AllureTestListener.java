@@ -21,5 +21,4 @@ public class AllureTestListener extends TestListenerAdapter {
         WebDriver driver = ((BaseTest) currentClass).driver;
         makeScreenShot(testName, driver);
     }
-
 }

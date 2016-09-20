@@ -52,11 +52,6 @@ public class BaseTest {
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, SECONDS);
-
-        fluentWait = new FluentWait(driver)
-                .withTimeout(30, TimeUnit.SECONDS)
-                .pollingEvery(2, TimeUnit.SECONDS)
-                .ignoring(NoSuchElementException.class);
     }
 
     @AfterClass(alwaysRun = true)

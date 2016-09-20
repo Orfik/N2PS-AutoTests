@@ -1,11 +1,7 @@
 package tests;
 
 import dataproviders.DataProviderClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,7 +28,7 @@ public class CreationProject extends BaseTest {
         String expectedTitle = "Untitled - Pages - Storied.co";
         auth(login, password);
         projectBoard.createNewProject();
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(detailProjectPage.getDEFAULTPROJECTNAME())));
+        detailProjectPage.createFirstArticle();
         String actualTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }

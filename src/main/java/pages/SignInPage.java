@@ -3,12 +3,10 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class SignInPage {
+public class SignInPage extends BasePage {
 
-    private WebDriver driver;
     private static final String URL_HOME = "https://stage.storied.co/auth/login";
 
     @FindBy(id = "login")
@@ -21,8 +19,7 @@ public class SignInPage {
     private WebElement errorMessage;
 
     public SignInPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @Step

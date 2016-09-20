@@ -3,8 +3,9 @@
     <parameter name="browser" value="firefox"/>
     <test name="Auth">
         <classes>
-            <class name="tests.Auth"/>
+            <class name="tests.Auth" />
             <class name="tests.CreationProject"/>
+            <class name="tests.ProjectSettings"/>
         </classes>
     </test>
 </suite>
