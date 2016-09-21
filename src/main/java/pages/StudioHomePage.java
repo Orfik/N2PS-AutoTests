@@ -14,7 +14,6 @@ public class StudioHomePage extends BasePage {
     public StudioHomePage(WebDriver driver) {
         super(driver);
     }
-
     @Step
     public ProjectBoardPage openStudioPage() {
         studioLink.click();

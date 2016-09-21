@@ -19,50 +19,104 @@ public class SeoBlock extends BaseBlock {
     private WebElement seoBingCode;
     @FindBy(id = IDSAVEBTN)
     private WebElement saveButton;
+    @FindBy(id = "seo_crawl_id")
+    private WebElement toggle;
 
     public SeoBlock(WebDriver driver) {
         super(driver);
     }
 
+    private void scrollToElement(String idOfElement) {
+        js.executeScript("document.getElementById('" + idOfElement + "').scrollIntoView(true)");
+    }
+
+    private void setValueToCodeMirror(String indexOfElement, String value) {
+        js.executeScript("$('.CodeMirror')[" + indexOfElement + "].CodeMirror.setValue('" + value + "')");
+    }
+
+    private void setValueToElement(WebElement element, String idOfElement, String value) {
+        scrollToElement(idOfElement);
+        element.clear();
+        element.sendKeys(value);
+    }
+
+    private String getActualValueOfCodeMirror(String indexOfElement) {
+        return js.executeScript("return description = $('.CodeMirror')[" + indexOfElement + "].CodeMirror.getValue()").toString();
+    }
+
+    private String getActualValueOfElement(WebElement element, String idOfElement) {
+        scrollToElement(idOfElement);
+        return element.getAttribute("value");
+    }
+
+    public String getTogglePosition() {
+        return toggle.getAttribute("class").replace("itoggle iT", "");
+    }
+
+    public SeoBlock turnToggle(String value) {
+        String actualPositionOfToogle = getTogglePosition();
+        if (value != actualPositionOfToogle)
+            toggle.click();
+        return this;
+    }
+
     public SeoBlock setDescription(String value) {
-        js.executeScript("$('.CodeMirror')[0].CodeMirror.setValue('" + value + "')");
+        setValueToCodeMirror("0", value);
         return this;
     }
 
     public SeoBlock setH1(String value) {
-        js.executeScript("$('.CodeMirror')[1].CodeMirror.setValue('" + value + "')");
+        setValueToCodeMirror("1", value);
         return this;
     }
 
     public SeoBlock setH2(String value) {
-        js.executeScript("$('.CodeMirror')[2].CodeMirror.setValue('" + value + "')");
+        setValueToCodeMirror("2", value);
         return this;
     }
 
     public SeoBlock setBaseUrl(String value) {
-        js.executeScript("document.getElementById('" + IDBASEURL + "').scrollIntoView(true)");
-        baseUrl.clear();
-        baseUrl.sendKeys(value);
+        setValueToElement(baseUrl, IDBASEURL, value);
         return this;
     }
 
     public SeoBlock setSeoGoogleCode(String value) {
-        js.executeScript("document.getElementById('" + IDGOOGLECODE + "').scrollIntoView(true)");
-        seoGoogleCode.clear();
-        seoGoogleCode.sendKeys(value);
+        setValueToElement(seoGoogleCode, IDGOOGLECODE, value);
         return this;
     }
 
     public SeoBlock setSeoBingCode(String value) {
-        js.executeScript("document.getElementById('" + IDBINGCODE + "').scrollIntoView(true)");
-        seoBingCode.clear();
-        seoBingCode.sendKeys(value);
+        setValueToElement(seoBingCode, IDBINGCODE, value);
         return this;
     }
 
     public SeoBlock clickSave() {
-        js.executeScript("document.getElementById('" + IDSAVEBTN + "').scrollIntoView(true)");
+        scrollToElement(IDSAVEBTN);
         saveButton.click();
         return this;
+    }
+
+    public String getDescription() {
+        return getActualValueOfCodeMirror("0");
+    }
+
+    public String getH1() {
+        return getActualValueOfCodeMirror("1");
+    }
+
+    public String getH2() {
+        return getActualValueOfCodeMirror("2");
+    }
+
+    public String getBaseUrl() {
+        return getActualValueOfElement(baseUrl, IDBASEURL);
+    }
+
+    public String getSeoGoogleCode() {
+        return getActualValueOfElement(seoGoogleCode, IDGOOGLECODE);
+    }
+
+    public String getBingGoogleCode() {
+        return getActualValueOfElement(seoBingCode, IDBINGCODE);
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class ProjectBoardPage extends BasePage {
 
@@ -24,12 +25,13 @@ public class ProjectBoardPage extends BasePage {
         return userName.getText();
     }
 
+    @Step
     public DetailProjectPage createNewProject() {
         linkNewProject.click();
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DEFAULTPROJECTNAME)));
         return new DetailProjectPage(driver);
     }
-
+    @Step
     public DetailProjectPage openProject() {
         firstProject.click();
         fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.className("crumbs")));

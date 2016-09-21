@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class DetailProjectPage extends BasePage {
 
@@ -29,17 +30,16 @@ public class DetailProjectPage extends BasePage {
         super(driver);
         projectSettingsPage = PageFactory.initElements(driver, ProjectSettingsPage.class);
     }
-
+    @Step
     public ProjectSettingsPage openProjectSettings() {
         projectSettingsLink.click();
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Project photo']")));
         return new ProjectSettingsPage(driver);
     }
-
     public static String getDEFAULTPROJECTNAME() {
         return DEFAULTPROJECTNAME;
     }
-
+    @Step
     public DetailProjectPage createFirstArticle() {
         addArticleBigIcon.click();
         storiedBetaGroupLink.click();
