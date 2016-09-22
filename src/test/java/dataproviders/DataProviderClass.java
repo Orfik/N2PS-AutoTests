@@ -31,4 +31,9 @@ public class DataProviderClass {
     public static Object[][] seoValues() {
         return new Object[][]{{"on","test description", "h1 test", "h2 test", "http://baseurl.com", "111", "111"}};
     }
+
+    @DataProvider(name = "Sharing Options")
+    public static Object[][] sharingOptionsValues() {
+        return new Object[][]{{" ","graph title test", "description test", " ", " ", "it's twitter message", "Email", "it's email body"}};
+    }
 }

@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.BasePage;
 import pages.DetailProjectPage;
 import pages.ProjectBoardPage;
 import pages.ProjectSettingsPage;
@@ -39,7 +38,7 @@ public class ProjectSettings extends BaseTest {
     @Features("Project Settings: SEO")
     @Stories("Project Settings: SEO")
     @Test(dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
-    public void openProjectSettingsPage(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode) throws IOException, InterruptedException {
+    public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode) throws IOException, InterruptedException {
         projectBoardPage.openProject();
         detailProjectPage.openProjectSettings();
         projectSettingsPage.openSeoTab();
@@ -61,4 +60,19 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(actualBingCode, bingCode, "BingCode don't math");
         softAssert.assertAll();
     }
+
+    @TestCaseId("5")
+    @Features("Project Settings: Sharing Options")
+    @Stories("Project Settings: Sharing Options")
+    @Test(dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
+    public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
+        projectBoardPage.openProject();
+        detailProjectPage.openProjectSettings();
+        projectSettingsPage.openSharingOptionsTab();
+        Thread.sleep(2000);
+        projectSettingsPage.setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody);
+        projectSettingsPage.saveSharingOptions();
+    }
+
+
 }

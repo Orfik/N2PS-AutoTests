@@ -14,6 +14,7 @@ import ru.yandex.qatools.allure.annotations.TestCaseId;
 
 import java.io.IOException;
 @Listeners(value = AllureTestListener.class)
+
 public class CreationProject extends BaseTest {
 
     private ProjectBoardPage projectBoard;

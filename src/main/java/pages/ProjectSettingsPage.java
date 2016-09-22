@@ -1,6 +1,7 @@
 package pages;
 
 import blocks.SeoBlock;
+import blocks.SharingOptionsBlock;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 public class ProjectSettingsPage extends BasePage {
 
     private SeoBlock seoBlock;
+    private SharingOptionsBlock sharingOptionsBlock;
 
     private static final String SETTINGHEADRELOCATOR = "//span[@title = 'Untitled']";
 
@@ -36,6 +38,7 @@ public class ProjectSettingsPage extends BasePage {
     public ProjectSettingsPage(WebDriver driver) {
         super(driver);
         seoBlock = PageFactory.initElements(driver, SeoBlock.class);
+        sharingOptionsBlock = PageFactory.initElements(driver, SharingOptionsBlock.class);
     }
 
     public static String getSettingsHeaderLocator() {
@@ -57,7 +60,13 @@ public class ProjectSettingsPage extends BasePage {
 
     @Step
     public ProjectSettingsPage setSeoValues(String description, String h1, String h2, String baseUrl, String googleCode, String bingCode) {
-        seoBlock.setDescription(description).setH1(h1).setH2(h2).setBaseUrl(baseUrl).setSeoGoogleCode(googleCode).setSeoBingCode(bingCode);
+        seoBlock
+                .setDescription(description)
+                .setH1(h1)
+                .setH2(h2)
+                .setBaseUrl(baseUrl)
+                .setSeoGoogleCode(googleCode)
+                .setSeoBingCode(bingCode);
         return this;
     }
 
@@ -83,6 +92,13 @@ public class ProjectSettingsPage extends BasePage {
         return seoBlock.getH2();
     }
 
+    @Step
+    public ProjectSettingsPage openSharingOptionsTab() {
+        sharingOptionLink.click();
+        fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("sharingImage")));
+        return this;
+    }
+
     public String getBaseUrl() {
         return seoBlock.getBaseUrl();
     }
@@ -94,4 +110,29 @@ public class ProjectSettingsPage extends BasePage {
     public String getBingCode() {
         return seoBlock.getBingGoogleCode();
     }
+
+    public ProjectSettingsPage setSharingOptions(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) {
+        sharingOptionsBlock
+                .setFBId(fbId)
+                .setGraphTitle(graphTitle)
+                .setGraphDescription(graphDescription)
+                .setGraphSiteName(graphSiteName)
+                .setGraphUrl(graphUrl)
+                .setTwitterMessage(twitterMessage)
+                .setEmailSubject(emailSubject)
+                .setEmailBody(emailBody);
+        return this;
+    }
+
+    public ProjectSettingsPage saveSharingOptions() {
+        sharingOptionsBlock.clickSave();
+        return this;
+    }
+
+/*
+    public String getFbId() {
+        return sharingOptionsBlock.get
+    }
+*/
+
 }
