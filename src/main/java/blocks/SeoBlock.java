@@ -29,7 +29,7 @@ public class SeoBlock extends BaseBlock {
 
     public SeoBlock turnToggle(String value) {
         String actualPositionOfToogle = getTogglePosition();
-        if (actualPositionOfToogle != value)
+        if (actualPositionOfToogle.equalsIgnoreCase(value) == false)
             toggle.click();
         return this;
     }
