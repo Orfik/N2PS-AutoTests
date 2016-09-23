@@ -3,8 +3,10 @@ package pages;
 import blocks.SeoBlock;
 import blocks.SharingOptionsBlock;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,12 +18,13 @@ public class ProjectSettingsPage extends BasePage {
     private SharingOptionsBlock sharingOptionsBlock;
 
     private static final String SETTINGHEADRELOCATOR = "//span[@title = 'Untitled']";
+    private static final String SHARINGOPTIONSLINKXPATH = ".//*[text()='Sharing options']";
 
     @FindBy(xpath = SETTINGHEADRELOCATOR)
     private WebElement settingsHeader;
     @FindBy(xpath = "//*[text()='SEO']")
     private WebElement seoLink;
-    @FindBy(xpath = ".//*[text()='Sharing options']")
+    @FindBy(xpath = SHARINGOPTIONSLINKXPATH)
     private WebElement sharingOptionLink;
     @FindBy(xpath = ".//*[text()='Typography']")
     private WebElement typographyLink;
@@ -59,14 +62,15 @@ public class ProjectSettingsPage extends BasePage {
     }
 
     @Step
-    public ProjectSettingsPage setSeoValues(String description, String h1, String h2, String baseUrl, String googleCode, String bingCode) {
+    public ProjectSettingsPage setSeoValues(String description, String h1, String h2, String baseUrl, String googleCode, String bingCode, String additionalHtmlHeaders) {
         seoBlock
                 .setDescription(description)
                 .setH1(h1)
                 .setH2(h2)
                 .setBaseUrl(baseUrl)
                 .setSeoGoogleCode(googleCode)
-                .setSeoBingCode(bingCode);
+                .setSeoBingCode(bingCode)
+                .setAdditionalHtmlHeaders(additionalHtmlHeaders);
         return this;
     }
 
@@ -92,8 +96,12 @@ public class ProjectSettingsPage extends BasePage {
         return seoBlock.getH2();
     }
 
+    public String getAdditionalHtmlHeaders() { return  seoBlock.getAdditionalHtmlHeaders(); }
+
     @Step
     public ProjectSettingsPage openSharingOptionsTab() {
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("document.querySelectorAll('#properties>li>a')[0].scrollIntoView(true)");
         sharingOptionLink.click();
         fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("sharingImage")));
         return this;
@@ -129,10 +137,37 @@ public class ProjectSettingsPage extends BasePage {
         return this;
     }
 
-/*
     public String getFbId() {
-        return sharingOptionsBlock.get
+        return sharingOptionsBlock.getFbid();
     }
-*/
+
+
+    public String getGraphTitle() {
+        return sharingOptionsBlock.getGraphTitle();
+    }
+
+    public String getGraphDescription() {
+        return sharingOptionsBlock.getGraphDescription();
+    }
+
+    public String getGraphSiteName() {
+        return sharingOptionsBlock.getGraphSiteName();
+    }
+
+    public String getGraphUrl() {
+        return sharingOptionsBlock.getGraphUrl();
+    }
+
+    public String getTwitterMessage() {
+        return sharingOptionsBlock.getTwitterMessage();
+    }
+
+    public String getEmailSubject() {
+        return sharingOptionsBlock.getEmailSubject();
+    }
+
+    public String getEmailBody() {
+        return sharingOptionsBlock.getEmailBody();
+    }
 
 }

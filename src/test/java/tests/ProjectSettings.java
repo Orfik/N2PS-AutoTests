@@ -1,5 +1,7 @@
 package tests;
 
+import blocks.SeoBlock;
+import blocks.SharingOptionsBlock;
 import dataproviders.DataProviderClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -29,21 +31,17 @@ public class ProjectSettings extends BaseTest {
         softAssert = new SoftAssert();
     }
 
-    @Test(dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
-    public void auth(String email, String password, String userName) throws IOException {
-        auth(email, password);
-    }
-
     @TestCaseId("4")
     @Features("Project Settings: SEO")
     @Stories("Project Settings: SEO")
     @Test(dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
-    public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode) throws IOException, InterruptedException {
+    public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode, String additionalHtmlHeaders) throws IOException, InterruptedException {
+        auth("qa@storied.co", "zxc123");
         projectBoardPage.openProject();
         detailProjectPage.openProjectSettings();
         projectSettingsPage.openSeoTab();
         Thread.sleep(2000);
-        projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode).saveSeo();
+        projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode, additionalHtmlHeaders).saveSeo();
         String actualTogglePosition = projectSettingsPage.getTogglePosition();
         String actualDescription = projectSettingsPage.getDesctiption();
         String actualH1 = projectSettingsPage.getH1();
@@ -58,6 +56,7 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(actualBaseUrl, baseUrl, "urls don't match");
         softAssert.assertEquals(actualGoogleCode, googleCode, "GoogleCode don't math");
         softAssert.assertEquals(actualBingCode, bingCode, "BingCode don't math");
+        softAssert.assertEquals(projectSettingsPage.getAdditionalHtmlHeaders(), additionalHtmlHeaders, "additional html headers don't match");
         softAssert.assertAll();
     }
 
@@ -66,13 +65,18 @@ public class ProjectSettings extends BaseTest {
     @Stories("Project Settings: Sharing Options")
     @Test(dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
-        projectBoardPage.openProject();
-        detailProjectPage.openProjectSettings();
         projectSettingsPage.openSharingOptionsTab();
-        Thread.sleep(2000);
+        Thread.sleep(300);
         projectSettingsPage.setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody);
         projectSettingsPage.saveSharingOptions();
+        softAssert.assertEquals(projectSettingsPage.getFbId(), fbId);
+        softAssert.assertEquals(projectSettingsPage.getGraphTitle(), graphTitle);
+        softAssert.assertEquals(projectSettingsPage.getGraphDescription(), graphDescription);
+        softAssert.assertEquals(projectSettingsPage.getGraphSiteName(), graphSiteName);
+        softAssert.assertEquals(projectSettingsPage.getGraphUrl(), graphSiteName);
+        softAssert.assertEquals(projectSettingsPage.getTwitterMessage(), twitterMessage);
+        softAssert.assertEquals(projectSettingsPage.getEmailSubject(), emailSubject);
+        softAssert.assertEquals(projectSettingsPage.getEmailBody(), emailBody);
+        softAssert.assertAll();
     }
-
-
 }

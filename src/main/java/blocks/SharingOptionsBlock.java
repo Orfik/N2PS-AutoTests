@@ -65,4 +65,36 @@ public class SharingOptionsBlock extends BaseBlock {
         setValueToCodeMirror("2", value);
         return this;
     }
+
+    public String getFbid() {
+        return getActualValueOfElement(fbID, FBID);
+    }
+
+    public String getGraphTitle() {
+        return getActualValueOfElement(graphTitleID, GRAPHTITLEID);
+    }
+
+    public String getGraphDescription() {
+        return getActualValueOfCodeMirror("0");
+    }
+
+    public String getGraphSiteName() {
+        return getActualValueOfElement(graphSiteName, GRAPHSITENAMEID);
+    }
+
+    public String getGraphUrl() {
+        return getActualValueOfElement(graphUrl, GRAPHURLID);
+    }
+
+    public String getTwitterMessage() {
+        return getActualValueOfCodeMirror("1");
+    }
+
+    public String getEmailSubject() {
+        return getActualValueOfElement(sharingEmailSubject, SHARINGEMAILSUBJECTID);
+    }
+
+    public String getEmailBody() {
+        return getActualValueOfCodeMirror("2");
+    }
 }

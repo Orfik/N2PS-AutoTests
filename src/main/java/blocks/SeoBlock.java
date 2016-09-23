@@ -10,7 +10,6 @@ public class SeoBlock extends BaseBlock {
     private static final String IDGOOGLECODE = "seo_googlecode";
     private static final String IDBINGCODE = "seo_bingcode";
 
-
     @FindBy(id = IDBASEURL)
     private WebElement baseUrl;
     @FindBy(id = IDGOOGLECODE)
@@ -50,6 +49,11 @@ public class SeoBlock extends BaseBlock {
         return this;
     }
 
+    public SeoBlock setAdditionalHtmlHeaders(String value) {
+        setValueToCodeMirror("3", value);
+        return this;
+    }
+
     public SeoBlock setBaseUrl(String value) {
         setValueToElement(baseUrl, IDBASEURL, value);
         return this;
@@ -76,6 +80,8 @@ public class SeoBlock extends BaseBlock {
     public String getH2() {
         return getActualValueOfCodeMirror("2");
     }
+
+    public String getAdditionalHtmlHeaders() { return getActualValueOfCodeMirror("3"); }
 
     public String getBaseUrl() {
         return getActualValueOfElement(baseUrl, IDBASEURL);

@@ -29,11 +29,11 @@ public class DataProviderClass {
 
     @DataProvider(name = "SEO")
     public static Object[][] seoValues() {
-        return new Object[][]{{"on","test description", "h1 test", "h2 test", "http://baseurl.com", "111", "111"}};
+        return new Object[][]{{"on","test description", "h1 test", "h2 test", "http://baseurl.com", "111", "111", "wait"}};
     }
 
     @DataProvider(name = "Sharing Options")
     public static Object[][] sharingOptionsValues() {
-        return new Object[][]{{" ","graph title test", "description test", " ", " ", "it's twitter message", "Email", "it's email body"}};
+        return new Object[][]{{" ","graph title test", "description test", " ", " ", "twitter message", "Email", "email body"}};
     }
 }
