@@ -2,10 +2,7 @@ package pages;
 
 import blocks.SeoBlock;
 import blocks.SharingOptionsBlock;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,6 +34,8 @@ public class ProjectSettingsPage extends BasePage {
     private WebElement javascriptLink;
     @FindBy(xpath = ".//*[text()='Custom configuration']")
     private WebElement customConfigurationLink;
+    @FindBy(id = "article-save-popup-save")
+    private WebElement saveBtnOfBasePrompt;
 
 
     public ProjectSettingsPage(WebDriver driver) {
@@ -47,6 +46,11 @@ public class ProjectSettingsPage extends BasePage {
 
     public static String getSettingsHeaderLocator() {
         return SETTINGHEADRELOCATOR;
+    }
+
+    public ProjectSettingsPage saveAllChangesInPrompt() {
+        saveBtnOfBasePrompt.click();
+        return this;
     }
 
     @Step
@@ -101,11 +105,16 @@ public class ProjectSettingsPage extends BasePage {
 
     @Step
     public ProjectSettingsPage openSharingOptionsTab() throws IOException, InterruptedException {
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("document.querySelectorAll('#properties>li>a')[0].scrollIntoView(true)");
-        js.executeScript("document.querySelectorAll('#properties>li>a')[2].click()");
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("document.querySelectorAll('#properties>li>a')[0].scrollIntoView(true)");
+            js.executeScript("document.querySelectorAll('#properties>li>a')[2].click()");
+            driver.findElement(By.id("sharing_facebook_app_id"));
+        }
+        catch (WebDriverException e) {
+            saveAllChangesInPrompt();
+        }
         Thread.sleep(2000);
-     //   fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("sharingImage")));
         return this;
     }
 
@@ -176,5 +185,4 @@ public class ProjectSettingsPage extends BasePage {
         sharingOptionsBlock.uploadSharingImage(firstImage, imageForChanging);
         return this;
     }
-
 }
