@@ -65,9 +65,9 @@ public class ProjectSettings extends BaseTest {
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
         projectSettingsPage.openSharingOptionsTab();
         Thread.sleep(300);
-        projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg");
-        projectSettingsPage.setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody);
-        projectSettingsPage.saveSharingOptions();
+        projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg")
+                .setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody)
+                .saveSharingOptions();
         softAssert.assertEquals(projectSettingsPage.getFbId(), fbId);
         softAssert.assertEquals(projectSettingsPage.getGraphTitle(), graphTitle);
         softAssert.assertEquals(projectSettingsPage.getGraphDescription(), graphDescription);

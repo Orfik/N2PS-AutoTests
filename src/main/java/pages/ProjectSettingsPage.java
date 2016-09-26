@@ -130,6 +130,7 @@ public class ProjectSettingsPage extends BasePage {
         return seoBlock.getBingGoogleCode();
     }
 
+    @Step
     public ProjectSettingsPage setSharingOptions(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) {
         sharingOptionsBlock
                 .setFBId(fbId)
@@ -143,6 +144,7 @@ public class ProjectSettingsPage extends BasePage {
         return this;
     }
 
+    @Step
     public ProjectSettingsPage saveSharingOptions() {
         sharingOptionsBlock.clickSave();
         return this;
@@ -181,6 +183,7 @@ public class ProjectSettingsPage extends BasePage {
         return sharingOptionsBlock.getEmailBody();
     }
 
+    @Step
     public ProjectSettingsPage uploadSharingImage(String firstImage, String imageForChanging) {
         sharingOptionsBlock.uploadSharingImage(firstImage, imageForChanging);
         return this;
