@@ -1,7 +1,5 @@
 package tests;
 
-import blocks.SeoBlock;
-import blocks.SharingOptionsBlock;
 import dataproviders.DataProviderClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -67,6 +65,7 @@ public class ProjectSettings extends BaseTest {
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
         projectSettingsPage.openSharingOptionsTab();
         Thread.sleep(300);
+        projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg");
         projectSettingsPage.setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody);
         projectSettingsPage.saveSharingOptions();
         softAssert.assertEquals(projectSettingsPage.getFbId(), fbId);

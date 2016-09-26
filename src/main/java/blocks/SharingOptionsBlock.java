@@ -1,8 +1,12 @@
 package blocks;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SharingOptionsBlock extends BaseBlock {
     private static final String FBID = "sharing_facebook_app_id";
@@ -10,6 +14,7 @@ public class SharingOptionsBlock extends BaseBlock {
     private static final String GRAPHSITENAMEID = "sharing_site_name";
     private static final String GRAPHURLID = "sharing_og_url";
     private static final String SHARINGEMAILSUBJECTID = "sharing_email_subject";
+    private static final String JCROPAREA = ".jcrop-holder";
 
     @FindBy(id = FBID)
     private WebElement fbID;
@@ -21,6 +26,16 @@ public class SharingOptionsBlock extends BaseBlock {
     private WebElement graphUrl;
     @FindBy(id = SHARINGEMAILSUBJECTID)
     private WebElement sharingEmailSubject;
+    @FindBy(xpath = ".//div[@class='half_top uploadBlockOption uploadFromDisk']//input")
+    private WebElement inputFile;
+    @FindBy(xpath = ".//div[@class='filePreviewFocalWrapper']//img")
+    private WebElement sharingImage;
+    @FindBy(xpath = ".//*[@id='sharingImage']/div[1]/div[4]/a")
+    private WebElement deleteImageIcon;
+    @FindBy(xpath = "//div[@class='fileUploadBox']//div[@class='agreeButton btn']")
+    private WebElement promptToDeleteImage;
+    @FindBy(xpath = ".//*[@id='upload-button']/a[1]")
+    private WebElement saveAreaForCroppingBtn;
 
     public SharingOptionsBlock(WebDriver driver) {
         super(driver);
@@ -96,5 +111,23 @@ public class SharingOptionsBlock extends BaseBlock {
 
     public String getEmailBody() {
         return getActualValueOfCodeMirror("2");
+    }
+
+    public SharingOptionsBlock uploadSharingImage(String firstImage, String imageForChanging) {
+        try {
+            inputFile.sendKeys(firstImage);
+        } catch (ElementNotVisibleException env) {
+            Actions a = new Actions(driver);
+            a.moveToElement(sharingImage)
+                    .click(deleteImageIcon)
+                    .click(promptToDeleteImage)
+                    .perform();
+            inputFile.sendKeys(imageForChanging);
+        }
+
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(JCROPAREA)));
+        saveAreaForCroppingBtn.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.id(FBID)));
+        return this;
     }
 }

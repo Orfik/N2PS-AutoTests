@@ -6,11 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
+
+import java.io.IOException;
 
 public class ProjectSettingsPage extends BasePage {
 
@@ -99,11 +100,12 @@ public class ProjectSettingsPage extends BasePage {
     public String getAdditionalHtmlHeaders() { return  seoBlock.getAdditionalHtmlHeaders(); }
 
     @Step
-    public ProjectSettingsPage openSharingOptionsTab() {
+    public ProjectSettingsPage openSharingOptionsTab() throws IOException, InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("document.querySelectorAll('#properties>li>a')[0].scrollIntoView(true)");
-        sharingOptionLink.click();
-        fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("sharingImage")));
+        js.executeScript("document.querySelectorAll('#properties>li>a')[2].click()");
+        Thread.sleep(2000);
+     //   fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("sharingImage")));
         return this;
     }
 
@@ -168,6 +170,11 @@ public class ProjectSettingsPage extends BasePage {
 
     public String getEmailBody() {
         return sharingOptionsBlock.getEmailBody();
+    }
+
+    public ProjectSettingsPage uploadSharingImage(String firstImage, String imageForChanging) {
+        sharingOptionsBlock.uploadSharingImage(firstImage, imageForChanging);
+        return this;
     }
 
 }
