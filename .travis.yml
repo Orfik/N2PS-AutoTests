@@ -1,5 +1,6 @@
 language: java # set desired language
-
+jdk:
+      - oraclejdk8
 dist: trusty
 
 addons:
@@ -9,8 +10,7 @@ addons:
     packages:
       - google-chrome-stable
       - oracle-java8-installer
-jdk:
-  - oraclejdk8
+
 
 addons:
    firefox: "52.0.1" # if your project contains tests need to be run on firefox include these lines
@@ -19,6 +19,7 @@ addons:
 before_install:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
   - sleep 3
+
 
 before_script:
   # Selenium server
@@ -29,7 +30,6 @@ before_script:
   - sleep 20 # gives enough time to Selenium to start
 
 script:
-  - jdk_switcher use oraclejdk8
   # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
