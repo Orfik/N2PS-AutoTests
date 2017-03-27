@@ -1,5 +1,6 @@
 package dataproviders;
 
+
 import org.testng.annotations.DataProvider;
 
 public class DataProviderClass {
@@ -24,7 +25,7 @@ public class DataProviderClass {
 
     @DataProvider(name = "validUserData")
     public static Object[][] userValidCredentionals() {
-        return new Object[][]{{"qa@storied.co", "zxc123", "Ellina_admin Frolova"}};
+        return new Object[][]{{"qa@storied.co", "zxc123", "QA Storied"}};
     }
 
     @DataProvider(name = "SEO")
@@ -35,5 +36,6 @@ public class DataProviderClass {
     @DataProvider(name = "Sharing Options")
     public static Object[][] sharingOptionsValues() {
         return new Object[][]{{" ","graph title test", "description test", " ", " ", "twitter message", "Email", "email body"}};
-    }
+     }
 }
+

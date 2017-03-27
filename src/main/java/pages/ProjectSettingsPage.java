@@ -16,13 +16,13 @@ public class ProjectSettingsPage extends BasePage {
     private SharingOptionsBlock sharingOptionsBlock;
 
     private static final String SETTINGHEADRELOCATOR = "//span[@title = 'Untitled']";
-    private static final String SHARINGOPTIONSLINKXPATH = ".//*[text()='Sharing options']";
+    //private static final String SHARINGOPTIONSLINKXPATH = ".//*[text()='Sharing options']";
 
     @FindBy(xpath = SETTINGHEADRELOCATOR)
     private WebElement settingsHeader;
     @FindBy(xpath = "//*[text()='SEO']")
     private WebElement seoLink;
-    @FindBy(xpath = SHARINGOPTIONSLINKXPATH)
+    @FindBy(xpath = "//*[text()='Sharing options']")
     private WebElement sharingOptionLink;
     @FindBy(xpath = ".//*[text()='Typography']")
     private WebElement typographyLink;
@@ -34,7 +34,7 @@ public class ProjectSettingsPage extends BasePage {
     private WebElement javascriptLink;
     @FindBy(xpath = ".//*[text()='Custom configuration']")
     private WebElement customConfigurationLink;
-    @FindBy(id = "article-save-popup-save")
+    @FindBy(id = "article-save-popup-save")//*[@id="article-save-popup-save"]
     private WebElement saveBtnOfBasePrompt;
 
 
@@ -48,10 +48,11 @@ public class ProjectSettingsPage extends BasePage {
         return SETTINGHEADRELOCATOR;
     }
 
-    public ProjectSettingsPage saveAllChangesInPrompt() {
+   public ProjectSettingsPage saveBtnOfBasePrompt() {
         saveBtnOfBasePrompt.click();
         return this;
-    }
+   }
+
 
     @Step
     public ProjectSettingsPage openSeoTab() {
@@ -104,6 +105,7 @@ public class ProjectSettingsPage extends BasePage {
     public String getAdditionalHtmlHeaders() { return  seoBlock.getAdditionalHtmlHeaders(); }
 
     @Step
+
     public ProjectSettingsPage openSharingOptionsTab() throws IOException, InterruptedException {
         try {
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -112,7 +114,7 @@ public class ProjectSettingsPage extends BasePage {
             driver.findElement(By.id("sharing_facebook_app_id"));
         }
         catch (WebDriverException e) {
-            saveAllChangesInPrompt();
+            saveBtnOfBasePrompt();
         }
         Thread.sleep(2000);
         return this;

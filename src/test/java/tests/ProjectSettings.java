@@ -29,7 +29,7 @@ public class ProjectSettings extends BaseTest {
         softAssert = new SoftAssert();
     }
 
-    @TestCaseId("4")
+    @TestCaseId("5")
     @Features("Project Settings: SEO")
     @Stories("Project Settings: SEO")
     @Test(dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
@@ -39,7 +39,9 @@ public class ProjectSettings extends BaseTest {
         detailProjectPage.openProjectSettings();
         projectSettingsPage.openSeoTab();
         Thread.sleep(2000);
-        projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode, additionalHtmlHeaders).saveSeo();
+        projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode, additionalHtmlHeaders);
+        Thread.sleep(2000);
+        projectSettingsPage.saveSeo();
         String actualTogglePosition = projectSettingsPage.getTogglePosition();
         String actualDescription = projectSettingsPage.getDesctiption();
         String actualH1 = projectSettingsPage.getH1();
@@ -58,16 +60,20 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertAll();
     }
 
-    @TestCaseId("5")
+    @TestCaseId("6")
     @Features("Project Settings: Sharing Options")
     @Stories("Project Settings: Sharing Options")
     @Test(dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
+        auth("qa@storied.co", "zxc123");
+        projectBoardPage.openProject();
+        detailProjectPage.openProjectSettings();
         projectSettingsPage.openSharingOptionsTab();
         Thread.sleep(300);
         projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg")
-                .setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody)
-                .saveSharingOptions();
+                .setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody);
+        Thread.sleep(2000);
+        projectSettingsPage.saveSharingOptions();
         softAssert.assertEquals(projectSettingsPage.getFbId(), fbId);
         softAssert.assertEquals(projectSettingsPage.getGraphTitle(), graphTitle);
         softAssert.assertEquals(projectSettingsPage.getGraphDescription(), graphDescription);

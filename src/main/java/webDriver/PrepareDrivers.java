@@ -9,7 +9,7 @@ public class PrepareDrivers {
     public static DesiredCapabilities prepareFirefox() {
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\geckodriver.exe");
         capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", false);
+        capabilities.setCapability("marionette", true);
         return capabilities;
     }
 
@@ -18,7 +18,7 @@ public class PrepareDrivers {
         capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
-        options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+        options.setBinary("C:\\Users\\Owner\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         return capabilities;
     }

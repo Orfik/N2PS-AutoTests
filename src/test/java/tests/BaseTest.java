@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
+import pages.MediaLibraryPage;
 import pages.ProjectBoardPage;
 import pages.SignInPage;
 import pages.StudioHomePage;
@@ -25,6 +26,7 @@ public class BaseTest {
     private SignInPage signIn;
     private StudioHomePage studioHome;
     private ProjectBoardPage projectBoard;
+    private MediaLibraryPage mediaLibraryPage;
     private static final Logger LOG = Logger.getLogger("MyWebDriverFactory");
 
     @Parameters("browser")
@@ -39,6 +41,7 @@ public class BaseTest {
     @AfterClass(alwaysRun = true)
     public void closeBrowser() {
         WebDriverFactory.dismissAll();
+
     }
 
     public void auth(String login, String password) throws IOException {

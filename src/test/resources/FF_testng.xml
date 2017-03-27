@@ -6,6 +6,7 @@
             <class name="tests.Auth" />
             <class name="tests.CreationProject"/>
             <class name="tests.ProjectSettings"/>
+            <class name="tests.MediaLibrary"/>
         </classes>
     </test>
 </suite>

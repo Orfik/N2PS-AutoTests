@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
 
+
 public class ProjectBoardPage extends BasePage {
 
     @FindBy(xpath = ".//span[@class='userName']")
@@ -15,7 +16,12 @@ public class ProjectBoardPage extends BasePage {
     private WebElement linkNewProject;
     @FindBy(xpath = ".//*[@id='apps-list']/div[2]")
     private WebElement firstProject;
+    @FindBy(xpath = "//div[69]/div/ul/li[4]/a")
+    private WebElement deleteButton;
+    @FindBy (xpath = "//*[@id='apps-list']/div[16]/div/ul/li[4]/div/div/a[1]")
+    private WebElement confirmDeletionBtn;
     private static final String DEFAULTPROJECTNAME = "//span[@title = 'Untitled']";
+
 
     public ProjectBoardPage(WebDriver driver) {
         super(driver);
@@ -37,4 +43,10 @@ public class ProjectBoardPage extends BasePage {
         fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.className("crumbs")));
         return new DetailProjectPage(driver);
     }
+    @Step
+    public DetailProjectPage deleteProject(){
+        deleteButton.click();
+        confirmDeletionBtn.click();
+        return new DetailProjectPage(driver);
+        }
 }

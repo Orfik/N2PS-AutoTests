@@ -17,7 +17,7 @@ public class Browser {
         switch (browser.toUpperCase()) {
             case "FIREFOX":
                 LOG.info("MyWebDriverFactory: browser FF. ");
-                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareFirefox());
+                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareChrome());
 
             case "CHROME":
                 LOG.info("MyWebDriverFactory: browser Chrome. ");
@@ -25,7 +25,7 @@ public class Browser {
 
             default:
                 LOG.info("MyWebDriverFactory: browser unknown. Default option - Firefox");
-                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareFirefox());
+                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareChrome());
         }
     }
 }
