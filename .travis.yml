@@ -3,6 +3,7 @@ jdk:
       - oraclejdk8
 dist: trusty
 
+sudo: false
 addons:
   apt:
     sources:
@@ -30,6 +31,7 @@ before_script:
   - sleep 20 # gives enough time to Selenium to start
 
 script:
+  mvn clean verify
   # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
