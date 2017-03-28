@@ -1,5 +1,6 @@
 language: java # set desired language
 
+sudo: false
 dist: trusty
 
 jdk:
@@ -18,18 +19,18 @@ addons:
 
 before_install:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
-  - sleep 3
+  #- sleep 3
 
 
 before_script:
   # Selenium server
-  - wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar
-  - wget %url_of_your_lib% # download your framework or framework dependencies (selenium libs, etc.)
-  - java -jar selenium-server-standalone-2.45.0.jar > /dev/null 2>/dev/null & # starting selenium-server
-  - sleep 20 # gives enough time to Selenium to start
+  #- wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar
+  #- wget %url_of_your_lib% # download your framework or framework dependencies (selenium libs, etc.)
+  #- java -jar selenium-server-standalone-2.45.0.jar > /dev/null 2>/dev/null & # starting selenium-server
+  #- sleep 20 # gives enough time to Selenium to start
 
 script:
-   mvn test -f ./source/pom.xml
+   # mvn test -f ./source/pom.xml
    # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
