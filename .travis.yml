@@ -5,14 +5,14 @@ dist: trusty
 sudo: false
 script: mvn clean verify
 jdk:
-      - oraclejdk8
+      - oraclejdk7
 addons:
   apt:
     sources:
       - google-chrome # if your project contains tests need to be run on chrome include these lines
     packages:
       - google-chrome-stable
-      - oracle-java8-installer
+      - oracle-java7-installer
 
 
 addons:
