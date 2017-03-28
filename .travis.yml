@@ -3,7 +3,7 @@ language: java # set desired language
 dist: trusty
 
 
-script: mvn clean verify
+script:
 jdk:
       - oraclejdk8
 addons:
@@ -26,7 +26,8 @@ before_install:
 
 before_script:
   # Selenium server
-
+  - mvn clean verify
+  - mvn test -B
   - wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar
   - wget %url_of_your_lib% # download your framework or framework dependencies (selenium libs, etc.)
   - java -jar selenium-server-standalone-2.45.0.jar > /dev/null 2>/dev/null & # starting selenium-server
