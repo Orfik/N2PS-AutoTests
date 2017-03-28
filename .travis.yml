@@ -1,9 +1,11 @@
 language: java # set desired language
-jdk:
-      - oraclejdk8
+
 dist: trusty
 
 sudo: false
+script: mvn clean verify
+jdk:
+      - oraclejdk8
 addons:
   apt:
     sources:
@@ -31,7 +33,7 @@ before_script:
   - sleep 20 # gives enough time to Selenium to start
 
 script:
-  mvn clean verify
+
   # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
