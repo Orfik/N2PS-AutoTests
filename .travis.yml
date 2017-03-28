@@ -2,7 +2,8 @@ language: java # set desired language
 
 dist: trusty
 
-install: mvn install
+install:
+  - mvn install
 script:
 jdk:
       - oraclejdk8
