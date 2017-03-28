@@ -3,8 +3,10 @@ language: java # set desired language
 dist: trusty
 
 install:
-  - mvn install
-script:
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+
+
 jdk:
       - oraclejdk8
 addons:
@@ -33,6 +35,7 @@ before_script:
   - sleep 20 # gives enough time to Selenium to start
 
 script:
+    - mvn test
    # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
