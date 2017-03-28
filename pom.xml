@@ -126,9 +126,6 @@
                         <configuration>
                             <source>1.7</source>
                             <target>1.7</target>
-                            <includes>
-                                <include>BaseTest.java</include>
-                            </includes>
                         </configuration>
                         </plugin>
                 </plugins>
