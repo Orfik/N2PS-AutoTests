@@ -10,7 +10,6 @@
     <properties>
         <suite.name>FF_testng.xml</suite.name>
         <aspectj.version>1.8.5</aspectj.version>
-        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
         <selenium.version>3.0.0-beta3</selenium.version>
@@ -127,6 +126,9 @@
                         <configuration>
                             <source>1.7</source>
                             <target>1.7</target>
+                            <includes>
+                                <include>BaseTest.java</include>
+                            </includes>
                         </configuration>
                         </plugin>
                 </plugins>
