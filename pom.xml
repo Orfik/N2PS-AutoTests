@@ -83,7 +83,7 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>src/test/resources/FF_testng.xml</suiteXmlFile>
+                                <File>src/test/resources/FF_testng.xml</File>
                             </suiteXmlFiles>
                             <testFailureIgnore>true</testFailureIgnore>
                             <argLine>
