@@ -1,10 +1,12 @@
 language: java # set desired language
+
 dist: trusty
+
 jdk:
       - oraclejdk8
 
 addons:
-   firefox: "52.0.1" # if your project contains tests need to be run on firefox include these lines
+   firefox: "52" # if your project contains tests need to be run on firefox include these lines
   apt:
     sources:
       - google-chrome # if your project contains tests need to be run on chrome include these lines
