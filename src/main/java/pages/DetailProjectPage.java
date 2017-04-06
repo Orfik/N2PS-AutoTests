@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Step;
 
 //import static pages.DetailProjectPage.MEDIALIBRARYTITLE;
@@ -22,7 +23,11 @@ public class DetailProjectPage extends BasePage {
     private WebElement labelDefaultProjectName;
     @FindBy(xpath = ".//*[text()='Add your first page']")
     private WebElement addArticleBigIcon;
-    @FindBy(xpath = ".//*[@id='addNewPage']/div/div[1]/ul[1]/li[3]/span")
+    @FindBy(xpath = "//*[@id='projects']/ul/li[2]/a")
+    private WebElement addArticleSmallIcon;
+    @FindBy(xpath = "//*[@id='projects']/ul/li[1]/div[1]/ul/li[2]/a")
+    private WebElement addChildArticleIcon;
+    @FindBy(xpath = "//*[@id='addNewPage']/div[1]/div[1]/div[1]/ul[1]/li[3]")
     private WebElement storiedBetaGroupLink;
     @FindBy(xpath = "//*[@id='designs']/div[3]/div[1]/span")
     private WebElement blankLayoutTemplate;
@@ -32,6 +37,14 @@ public class DetailProjectPage extends BasePage {
     private WebElement mediaLibraryLink;
     @FindBy(xpath = MEDIALIBRARYTITLE)
     private WebElement labelMediaLibrary;
+    @FindBy(xpath = "//*[@id='project-navigation']/a")
+    private WebElement navigationMenuLink;
+    @FindBy(xpath = "/html/body/section/div[1]/div[1]/ul/li[6]/a")
+    private WebElement publishProjectPage;
+    @FindBy(xpath = "//*[@id='project-preloader']/a")
+    private WebElement preloaderLink;
+    @FindBy(xpath = "/html/body/section/section/section/div[3]/div/div/section")
+    private WebElement projectPreviweLink;
 
     public DetailProjectPage(WebDriver driver) {
         super(driver);
@@ -62,4 +75,16 @@ public class DetailProjectPage extends BasePage {
         return new MediaLibraryPage(driver);
     }
     public  static String getMEDIALIBRARYTITLE() { return MEDIALIBRARYTITLE; }
+    @Step
+    public ProjectPublishPage openProjectPublish(){
+        publishProjectPage.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='publish-form']/div[2]/div[1]")));
+        return new ProjectPublishPage(driver);
+    }
+    /*@Step
+    public NavigationMenuPage openNavigationMenu(){
+        navigationMenuLink.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='navigationForm']/fieldset/div[2]")));
+        return new NavigationMenuPage(driver);
+    }*/
 }
