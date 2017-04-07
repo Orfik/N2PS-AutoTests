@@ -94,8 +94,7 @@
                     <configuration>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <suiteXmlFiles>
-                            <File>src/test/resources/FF_testng.xml<File>
-                            <File>src/test/resources/Chrome_testng.xml<File>
+                            <File>src/test/resources/FF_testng.xml</File>
                         </suiteXmlFiles>
                         <testFailureIgnore>true</testFailureIgnore>
                         <argLine>
