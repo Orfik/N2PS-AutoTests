@@ -83,5 +83,6 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(projectSettingsPage.getEmailSubject(), emailSubject);
         softAssert.assertEquals(projectSettingsPage.getEmailBody(), emailBody);
         softAssert.assertAll();
+        //Need add click save button
     }
 }
