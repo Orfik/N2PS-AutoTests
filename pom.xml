@@ -23,7 +23,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.9.8</version>
-            <scope>compile</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -92,13 +92,12 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
                     <configuration>
-                        <forkCount>0</forkCount>
-                        <!--<redirectTestOutputToFile>true</redirectTestOutputToFile>-->
+                        <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <suiteXmlFiles>
                             <suiteXmlFile>src/test/resources/FF_testng.xml</suiteXmlFile>
-                            <!--<suiteXmlFile>src/test/resources/Chrome_testng.xml<suiteXmlFile>-->
+                            <suiteXmlFile>src/test/resources/Chrome_testng.xml<suiteXmlFile>
                         </suiteXmlFiles>
-                        <!--<testFailureIgnore>true</testFailureIgnore>-->
+                        <testFailureIgnore>true</testFailureIgnore>
                         <argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
