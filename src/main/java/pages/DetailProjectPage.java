@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Step;
+
 
 //import static pages.DetailProjectPage.MEDIALIBRARYTITLE;
 
