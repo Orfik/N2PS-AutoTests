@@ -38,11 +38,11 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("7")
     @Features("Open Library")
     @Stories("Open Library")
-    @Test(description = "open media library", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    @Test(priority=1, description = "open media library", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void openMediaLibrary(String login, String password, String expectedUserName) throws IOException, InterruptedException {
         auth(login, password);
-        projectBoardPage.createNewProject();
-        detailProjectPage.createFirstArticle();
+        projectBoardPage.openProject();
+        //detailProjectPage.createFirstArticle();
         detailProjectPage.openMediaLibrary();
     }
 
@@ -50,16 +50,16 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("8")
     @Features("UploadImage")
     @Stories("UploadImage")
-    @Test(description = "UploadImage", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    @Test(priority=2, description = "UploadImage", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void uploadImage(String login, String password, String expectedUserName)throws IOException, InterruptedException {
         //auth(login, password);
         //projectBoardPage.createNewProject();
         //detailProjectPage.createFirstArticle();
-        //detailProjectPage.openMediaLibrary();
+       //detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeImage();
         mediaLibraryPage.uploadFirstImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg");
         mediaLibraryPage.uploadSecondImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg");
-        mediaLibraryPage.deleteAsset();
+        //mediaLibraryPage.deleteAsset();
         //softAssert.assertEquals();
 }
         /*@TestCaseId("9")
@@ -73,7 +73,7 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("10")
     @Features("UploadFonts")
     @Stories("UploadFonts")
-    @Test(description = "UploadFonts",  dataProviderClass = DataProviderClass.class)
+    @Test(priority=3, description = "UploadFonts",  dataProviderClass = DataProviderClass.class)
     public void uploadFonts ()throws IOException, InterruptedException {
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.createNewProject();
@@ -93,7 +93,7 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("12")
     @Features("UploadAudio")
     @Stories("UploadAudio")
-    @Test(description = "UploadAudio", dataProviderClass = DataProviderClass.class)
+    @Test(priority=4, description = "UploadAudio", dataProviderClass = DataProviderClass.class)
     public void uploadAudio () throws IOException, InstantiationException{
         //auth("qa@storied.co", "zxc123");
        // projectBoardPage.createNewProject();
@@ -113,7 +113,7 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("14")
     @Features("UploadVideo")
     @Stories("UploadVideo")
-    @Test(description = "UploadVideo", dataProviderClass = DataProviderClass.class)
+    @Test(priority=5, description = "UploadVideo", dataProviderClass = DataProviderClass.class)
     public void uploadVideo () throws IOException, InstantiationException{
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.createNewProject();
@@ -132,7 +132,7 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("16")
     @Features("UploadJs")
     @Stories("UploadJs")
-    @Test(description = "UploadJs", dataProviderClass = DataProviderClass.class)
+    @Test(priority=6, description = "UploadJs", dataProviderClass = DataProviderClass.class)
     public void uploadJs() throws IOException, InstantiationException{
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.createNewProject();
@@ -151,12 +151,12 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("18")
     @Features("UploadGIF")
     @Stories("UploadGIF")
-    @Test(description = "UploadGIF", dataProviderClass = DataProviderClass.class)
+    @Test(priority=7, description = "UploadGIF", dataProviderClass = DataProviderClass.class)
     public void uploadGIF () throws IOException, InstantiationException{
         //auth("qa@storied.co", "zxc123");
-        // projectBoardPage.createNewProject();
-        // detailProjectPage.createFirstArticle();
-        // detailProjectPage.openMediaLibrary();
+        //projectBoardPage.openProject();
+        //detailProjectPage.createFirstArticle();
+        //detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeGif();
         mediaLibraryPage.uploadGif(System.getProperty("user.dir") + "\\src\\test\\resources\\GIF1.gif");
     }

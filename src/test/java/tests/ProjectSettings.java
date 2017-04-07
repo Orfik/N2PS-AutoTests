@@ -65,9 +65,9 @@ public class ProjectSettings extends BaseTest {
     @Stories("Project Settings: Sharing Options")
     @Test(dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
-        auth("qa@storied.co", "zxc123");
-        projectBoardPage.openProject();
-        detailProjectPage.openProjectSettings();
+        //auth("qa@storied.co", "zxc123");
+        //projectBoardPage.openProject();
+        //detailProjectPage.openProjectSettings();
         projectSettingsPage.openSharingOptionsTab();
         Thread.sleep(300);
         projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg")

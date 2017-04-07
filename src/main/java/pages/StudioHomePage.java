@@ -21,7 +21,7 @@ public class StudioHomePage extends BasePage {
     @Step
     public ProjectBoardPage openStudioPage() {
         studioLink.click();
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//span[@class='userName']")));
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='current_account_id_chosen']/a/span")));
         return new ProjectBoardPage(driver);
     }
 }

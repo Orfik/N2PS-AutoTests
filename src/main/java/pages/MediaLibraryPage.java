@@ -40,7 +40,8 @@ public class MediaLibraryPage extends BasePage {
     private WebElement deleteAsset;
     @FindBy (xpath = "//*[@id='library-popup']/div[1]/div[1]/div[1]/div[3]/div/ul/li[2]/a/div/div[2]/div/div[1]")
     private WebElement confirmDeletionBtn;
-
+    @FindBy (xpath = "#library-popup > div.modal_content.loadful > div.library_content_wrapper.typeFilterAllowed.readOnlyMode.disableButtonsMenu > div.library_content > div.assets_wrapper.niceScroll > div > ul > li.libraryAssetItem.libraryUploader > form > div > div.fileUploadControls > div.uploadBlockOption.uploadFromDisk > input")
+    private WebElement uploadBox;
 
 
     public MediaLibraryPage(WebDriver driver) {

@@ -46,9 +46,16 @@ public class DetailProjectPage extends BasePage {
     @FindBy(xpath = "/html/body/section/section/section/div[3]/div/div/section")
     private WebElement projectPreviweLink;
 
+
     public DetailProjectPage(WebDriver driver) {
         super(driver);
         projectSettingsPage = PageFactory.initElements(driver, ProjectSettingsPage.class);
+    }
+    public String getProjectName() {
+        return labelDefaultProjectName.getText();
+    }
+    public String getArticleName() {
+        return articleDefaultTitle.getText();
     }
     @Step
     public ProjectSettingsPage openProjectSettings() {

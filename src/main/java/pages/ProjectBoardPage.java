@@ -10,7 +10,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class ProjectBoardPage extends BasePage {
 
-    @FindBy(xpath = ".//span[@class='userName']")
+    @FindBy(xpath = "//*[@id='current_account_id_chosen']/a/span")
     private WebElement userName;
     @FindBy(xpath = "//a[@href = '#choosedesign_popup']")
     private WebElement linkNewProject;

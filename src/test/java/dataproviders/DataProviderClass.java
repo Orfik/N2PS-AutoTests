@@ -25,7 +25,7 @@ public class DataProviderClass {
 
     @DataProvider(name = "validUserData")
     public static Object[][] userValidCredentionals() {
-        return new Object[][]{{"qa@storied.co", "zxc123", "QA Storied"}};
+        return new Object[][]{{"qa@storied.co", "zxc123", "company api"}};
     }
 
     @DataProvider(name = "SEO")
