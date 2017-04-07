@@ -89,7 +89,7 @@
                         <forkCount>0</forkCount>
                         <!--<redirectTestOutputToFile>true</redirectTestOutputToFile>-->
                         <suiteXmlFiles>
-                            <suiteXmlFile>src/test/resources/FF_testng.xml<suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/FF_testng.xml</suiteXmlFile>
                             <!--<suiteXmlFile>src/test/resources/Chrome_testng.xml<suiteXmlFile>-->
                         </suiteXmlFiles>
                         <!--<testFailureIgnore>true</testFailureIgnore>-->
