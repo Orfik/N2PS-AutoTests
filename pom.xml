@@ -38,7 +38,7 @@
                         <version>2.19.1</version>
                         <configuration>
                         <suiteXmlFiles>
-                            <file>src/test/resources/${suite.name}</file>
+                            <suiteXmlFiles>src/test/resources/FF_test.xml</suiteXmlFiles>
                             </suiteXmlFiles>
                         <!--<configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
