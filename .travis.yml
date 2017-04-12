@@ -31,6 +31,7 @@ before_script:
 
 script:
    - mvn test -B
+   - mvn -X
   # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
