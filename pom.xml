@@ -61,16 +61,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.squareup.okhttp</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>2.7.5</version>
-        </dependency>
     </dependencies>
     <profiles>
         <profile>
@@ -94,7 +84,7 @@
                     <configuration>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <suiteXmlFiles>
-                            <File>src/test/resources/${suite.name}</File>
+                            <suiteXmlFile>src/test/resources/${suite.name}</suiteXmlFile>
                         </suiteXmlFiles>
                         <testFailureIgnore>true</testFailureIgnore>
                         <argLine>
