@@ -30,7 +30,7 @@ before_script:
   #- sleep 20 # gives enough time to Selenium to start
 
 script:
-   # mvn test -f ./source/pom.xml
-   # perform build and run commands here
+   - mvn test -B
+  # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
