@@ -4,9 +4,7 @@ package tests;
  * Created by Owner on 24.03.2017.
  */
 import dataproviders.DataProviderClass;
-import org.eclipse.jetty.util.IO;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
