@@ -132,12 +132,7 @@
             <artifactId>selenium-server</artifactId>
             <version>3.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-            <version>9.3.0.v20150612</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
     <reporting>
