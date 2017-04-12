@@ -81,7 +81,7 @@
                         <version>3.6.1</version>
                         <configuration>
                         <includes>
-                            <include>${basedir}/src/test/java/**/*.java</include>
+                            <include>${basedir}/src/test/java/tests/*.java</include>
                         </includes>
                         </configuration>
                     </plugin>
