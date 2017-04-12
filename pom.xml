@@ -94,7 +94,7 @@
                     <configuration>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <suiteXmlFiles>
-                            <File>src/test/resources/{suite.name}</File>
+                            <File>src/test/resources/${suite.name}</File>
                         </suiteXmlFiles>
                         <testFailureIgnore>true</testFailureIgnore>
                         <argLine>
