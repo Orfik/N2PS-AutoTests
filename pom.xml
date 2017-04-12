@@ -79,6 +79,11 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>3.6.1</version>
+                        <configuration>
+                        <includes>
+                            <include>${basedir}/src/test/java/**/*.java</include>
+                        </includes>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -127,7 +132,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
     </dependencies>
 
     <reporting>
