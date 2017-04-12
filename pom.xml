@@ -36,7 +36,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.19.1</version>
-                        <configuration>
+                        <!--<configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
                                 <suiteXmlFile>src/test/resources/${suite.name}</suiteXmlFile>
@@ -45,7 +45,7 @@
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                             </argLine>
-                        </configuration>
+                        </configuration>-->
                         <executions>
                             <execution>
                                 <goals>
@@ -61,7 +61,7 @@
                             </dependency>
                         </dependencies>
                     </plugin>
-                    <plugin>
+                    <!--<plugin>
                         <groupId>org.eclipse.jetty</groupId>
                         <artifactId>jetty-maven-plugin</artifactId>
                         <version>9.3.0.v20150612</version>
@@ -74,16 +74,15 @@
                             <stopKey>stop</stopKey>
                             <stopPort>1234</stopPort>
                         </configuration>
-                    </plugin>
+                    </plugin>-->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>3.6.1</version>
-                        <configuration>
-                        <includes>
-                            <include>${basedir}/src/test/java/tests/*.java</include>
-                        </includes>
-                        </configuration>
+                            <configuration>
+                                <source>1.7</source>
+                                <target>1.7</target>
+                            </configuration>
                     </plugin>
                 </plugins>
             </build>
