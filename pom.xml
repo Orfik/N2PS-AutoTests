@@ -8,7 +8,7 @@
     <artifactId>N2PS-AutoTests</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <suite.name>testFF.xml</suite.name>
+        <suite.name>testng.xml</suite.name>
         <aspectj.version>1.8.5</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
@@ -20,14 +20,6 @@
     <profiles>
         <profile>
             <id>ui-test</id>
-            <activation>
-                <property>
-                    <name>!env.SUITES</name>
-                </property>
-            </activation>
-            <properties>
-                <suites>global.suites</suites>
-            </properties>
             <build>
                 <resources>
                     <resource>
@@ -47,7 +39,7 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>/home/travis/build/Orfik/N2PS-AutoTests/{suite.name}</suiteXmlFile>
+                                <suiteXmlFile>/home/travis/build/Orfik/N2PS-AutoTests/src/tests/resources/{suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
                             <skipTests>false</skipTests>
                             <testFailureIgnore>true</testFailureIgnore>
