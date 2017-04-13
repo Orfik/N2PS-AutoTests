@@ -20,13 +20,12 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 public class BaseTest {
-    protected Browser browser;
-    protected WebDriver driver;
-    protected SoftAssert softAssert;
+    private Browser browser;
+    private WebDriver driver;
+    private SoftAssert softAssert;
     private SignInPage signIn;
     private StudioHomePage studioHome;
     private ProjectBoardPage projectBoard;
-    private MediaLibraryPage mediaLibraryPage;
     private static final Logger LOG = Logger.getLogger("MyWebDriverFactory");
 
     @Parameters("browser")
