@@ -20,6 +20,14 @@
     <profiles>
         <profile>
             <id>ui-test</id>
+            <activation>
+                <property>
+                    <name>!env.SUITES</name>
+                </property>
+            </activation>
+            <properties>
+                <suites>global.suites</suites>
+            </properties>
             <build>
                 <resources>
                     <resource>
@@ -90,7 +98,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.9.8</version>
-            <scope>compile</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
