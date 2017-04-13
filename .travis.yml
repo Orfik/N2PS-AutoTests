@@ -40,7 +40,7 @@ before_script:
   # gives enough time to Selenium to start
 
 script:
-   - mvn test -B -X
+  - mvn test #-B -X
   # perform build and run commands here
   #- %your_framework build command%
   #- %your_framework run command%
