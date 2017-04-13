@@ -44,7 +44,7 @@ public class BaseTest {
 
     }
 
-    public void auth(String login, String password) /*throws IOException*/ {
+    public void auth(String login, String password) throws IOException {
         signIn = new SignInPage(driver);
         studioHome = new StudioHomePage(driver);
         projectBoard = new ProjectBoardPage(driver);
