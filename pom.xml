@@ -39,7 +39,7 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>/home/travis/build/Orfik/N2PS-AutoTests/src/tests/resources/{suite.name}</suiteXmlFile>
+                                <suiteXmlFile>/home/travis/build/Orfik/N2PS-AutoTests/src/tests/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
                             <skipTests>false</skipTests>
                             <testFailureIgnore>true</testFailureIgnore>
