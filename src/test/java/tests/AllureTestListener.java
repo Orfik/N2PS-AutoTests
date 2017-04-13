@@ -18,7 +18,7 @@ public class AllureTestListener extends TestListenerAdapter {
     public void onTestFailure(ITestResult result) {
         String testName = result.getName().concat(".png");
         Object currentClass = result.getInstance();
-        WebDriver driver = ((BaseTest) currentClass).driver;
+        WebDriver driver = ((TestBaseTest) currentClass).driver;
         makeScreenShot(testName, driver);
     }
 }
