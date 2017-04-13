@@ -1,8 +1,5 @@
 package tests;
 
-/**
- * Created by Owner on 24.03.2017.
- */
 import dataproviders.DataProviderClass;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +13,7 @@ import ru.yandex.qatools.allure.annotations.TestCaseId;
 import java.io.IOException;
 
 @Listeners(value = AllureTestListener.class)
-public class DeletionProject extends TestBaseTest {
+public class TestDeletionProject extends TestBaseTest {
 
     private DetailProjectPage detailProjectPage;
     private ProjectBoardPage projectBoardPage;

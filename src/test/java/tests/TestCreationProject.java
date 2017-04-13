@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @Listeners(value = AllureTestListener.class)
 
-public class CreationProject extends TestBaseTest {
+public class TestCreationProject extends TestBaseTest {
 
 
     private DetailProjectPage detailProjectPage;
