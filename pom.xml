@@ -8,7 +8,7 @@
     <artifactId>N2PS-AutoTests</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <suite.name>FF_test.xml</suite.name>
+        <suite.name>testFF.xml</suite.name>
         <aspectj.version>1.8.5</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>

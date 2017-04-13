@@ -4,7 +4,7 @@
     <test name="TestAuth">
         <classes>
             <class name="tests.Auth" />
-            <class name="tests.TestCreationProject"/>
+            <class name="tests.CreationProject"/>
             <class name="tests.ProjectSettings"/>
             <class name="tests.MediaLibrary"/>
         </classes>
