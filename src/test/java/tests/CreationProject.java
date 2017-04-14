@@ -24,7 +24,7 @@ public class CreationProject extends BaseTest {
    private StudioHomePage studioHomePage;
 
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp3() throws Exception {
         PageFactory.initElements(driver, this);
         projectBoardPage = new ProjectBoardPage(driver);
         detailProjectPage = new DetailProjectPage(driver);

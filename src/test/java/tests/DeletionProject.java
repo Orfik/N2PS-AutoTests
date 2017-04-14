@@ -20,7 +20,7 @@ public class DeletionProject extends BaseTest {
 
 
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp4() throws Exception {
         PageFactory.initElements(driver, this);
         detailProjectPage = new DetailProjectPage(driver);
         projectBoardPage = new ProjectBoardPage(driver);
