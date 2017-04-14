@@ -31,11 +31,12 @@ public class BaseTest {
 
     @Parameters("browser")
     @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional String browserName) {
+    public void setUp(@Optional String browser) {
         this.browser = new Browser();
-        driver = this.browser.getDriver(browserName);
+        driver = this.browser.getDriver(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30L, SECONDS);
+
     }
 
     @AfterClass(alwaysRun = true)

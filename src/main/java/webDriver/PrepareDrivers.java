@@ -9,7 +9,7 @@ public class PrepareDrivers {
     public static DesiredCapabilities prepareFirefox() {
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\geckodriver.exe");
         capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("marionette", false);
+        capabilities.setCapability("marionette", true);
         return capabilities;
     }
 

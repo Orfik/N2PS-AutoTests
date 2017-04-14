@@ -40,6 +40,7 @@ public class AuthTest extends BaseTest {
         singIn.openSinInPage().fillSignInForm(login, password).clickSignInButton();
         String actualError = singIn.getErrorMessage();
         Assert.assertEquals(actualError, expectedError);
+
     }
 
     @TestCaseId("2")
