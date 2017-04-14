@@ -29,9 +29,9 @@ public class BaseTest {
     private MediaLibraryPage mediaLibraryPage;
     private static final Logger LOG = Logger.getLogger("MyWebDriverFactory");
 
-    @Parameters("browser")
+    @Parameters({"browser"})
     @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional String browserName) {
+    public void setUp(String browserName) {
         this.browser = new Browser();
         driver = this.browser.getDriver(browserName);
         driver.manage().window().maximize();
