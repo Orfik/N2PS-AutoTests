@@ -31,9 +31,9 @@ public class BaseTest {
 
     @Parameters("browser")
     @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional String browser) {
+    public void setUp() {
         this.browser = new Browser();
-        driver = this.browser.getDriver(browser);
+        //driver = this.browser.getDriver(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30L, SECONDS);
 
