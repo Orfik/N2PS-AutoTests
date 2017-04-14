@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 
-public class TestBaseTest {
+public class BaseTest {
     protected Browser browser;
     protected WebDriver driver;
     protected SoftAssert softAssert;

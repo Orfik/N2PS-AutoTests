@@ -19,7 +19,7 @@ import ru.yandex.qatools.allure.annotations.TestCaseId;
 import java.io.IOException;
 
 @Listeners(value = AllureTestListener.class)
-public class TestMediaLibrary extends TestBaseTest {
+public class MediaLibrary extends BaseTest {
 
     private DetailProjectPage detailProjectPage;
     private ProjectBoardPage projectBoardPage;

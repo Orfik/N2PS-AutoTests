@@ -18,7 +18,7 @@ import java.io.IOException;
 
 @Listeners(value = AllureTestListener.class)
 
-public class TestAuth extends TestBaseTest {
+public class Auth extends BaseTest {
 
     private SignInPage singIn;
     private StudioHomePage studioHome;
