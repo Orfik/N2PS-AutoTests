@@ -27,7 +27,7 @@ public class MediaLibrary extends BaseTest {
 
 
     @BeforeMethod
-    public void setUp5() throws Exception {
+    public void setUp() throws Exception {
         PageFactory.initElements(driver, this);
         projectBoardPage = new ProjectBoardPage(driver);
         mediaLibraryPage = new MediaLibraryPage(driver);

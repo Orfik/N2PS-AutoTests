@@ -22,7 +22,7 @@ public class ProjectSettings extends BaseTest {
     private ProjectBoardPage projectBoardPage;
 
     @BeforeMethod
-    public void setUp6() throws Exception {
+    public void setUp() throws Exception {
         detailProjectPage = new DetailProjectPage(driver);
         projectSettingsPage = new ProjectSettingsPage(driver);
         projectBoardPage = new ProjectBoardPage(driver);

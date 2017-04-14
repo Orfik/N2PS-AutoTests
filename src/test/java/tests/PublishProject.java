@@ -23,7 +23,7 @@ public class PublishProject extends BaseTest {
     private ProjectPublishPage projectPublishPage;
 
     @BeforeMethod
-    public void setUp7() throws Exception {
+    public void setUp() throws Exception {
         PageFactory.initElements(driver, this);
         projectBoardPage = new ProjectBoardPage(driver);
         projectPublishPage = new ProjectPublishPage(driver);

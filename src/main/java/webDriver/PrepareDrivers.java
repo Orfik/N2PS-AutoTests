@@ -18,7 +18,7 @@ public class PrepareDrivers {
         capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
-        options.setBinary("C:\\Users\\Owner\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
+        //options.setBinary("C:\\Users\\Owner\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         return capabilities;
     }
