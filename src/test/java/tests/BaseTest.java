@@ -20,18 +20,17 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 public class BaseTest {
-    protected Browser browser;
-    protected WebDriver driver;
-    protected SoftAssert softAssert;
+    private Browser browser;
+    private WebDriver driver;
     private SignInPage signIn;
     private StudioHomePage studioHome;
     private ProjectBoardPage projectBoard;
-    private MediaLibraryPage mediaLibraryPage;
+
     private static final Logger LOG = Logger.getLogger("MyWebDriverFactory");
 
-    @Parameters({"browser"})
+    @Parameters("browser")
     @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional String browserName) throws Exception {
+    public void setUp(@Optional String browserName) {
         this.browser = new Browser();
         driver = this.browser.getDriver(browserName);
         driver.manage().window().maximize();
