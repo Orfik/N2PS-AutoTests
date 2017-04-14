@@ -3,7 +3,7 @@
     <parameter name="browser" value="chrome"/>
     <test name="Auth">
         <classes>
-            <class name="tests.Auth" />
+            <class name="tests.AuthTest" />
             <class name="tests.CreationProject"/>
             <class name="tests.ProjectSettings"/>
             <class name="tests.MediaLibrary"/>
