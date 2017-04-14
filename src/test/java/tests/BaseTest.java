@@ -31,7 +31,7 @@ public class BaseTest {
 
     @Parameters({"browser"})
     @BeforeClass(alwaysRun = true)
-    public void setUp(String browserName) {
+    public void setUp(String browserName) throws IOException {
         this.browser = new Browser();
         driver = this.browser.getDriver(browserName);
         driver.manage().window().maximize();
