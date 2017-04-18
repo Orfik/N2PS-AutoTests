@@ -25,7 +25,7 @@ public class AuthTest extends BaseTest {
     private ProjectBoardPage projectBoard;
 
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp(){
         PageFactory.initElements(driver, this);
         singIn = new SignInPage(driver);
         studioHome = new StudioHomePage(driver);
