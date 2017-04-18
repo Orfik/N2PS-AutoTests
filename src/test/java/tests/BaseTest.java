@@ -33,7 +33,7 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     public void setUp(@Optional String browserName) {
         browser = new Browser();
-        //driver = this.browser.getDriver(browserName);
+        driver = this.browser.getDriver(browserName);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30L, SECONDS);
 
