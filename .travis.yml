@@ -20,8 +20,8 @@ addons:
 before_install:
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
   - "sudo apt-get install unzip"
-  - "wget http://chromedriver.storage.googleapis.com/LATEST_RELEASE"
-  - "read CHROMEDRIVER_LATEST_RELEASE < LATEST_RELEASE"
+  #- "wget http://chromedriver.storage.googleapis.com/LATEST_RELEASE"
+  #- "read CHROMEDRIVER_LATEST_RELEASE < LATEST_RELEASE"
   #- "wget -N http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_LATEST_RELEASE/chromedriver_linux64.zip"
   #- "unzip chromedriver_linux64.zip"
   #- "chmod +x chromedriver"
