@@ -21,7 +21,7 @@ public class Browser {
 
             case "CHROME":
                 LOG.info("MyWebDriverFactory: browser Chrome. ");
-                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareChrome());
+                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareFirefox());
 
             default:
                 LOG.info("MyWebDriverFactory: browser unknown. Default option - Firefox");
