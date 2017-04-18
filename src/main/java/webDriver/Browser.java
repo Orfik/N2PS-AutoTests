@@ -25,7 +25,7 @@ public class Browser {
 
             default:
                 LOG.info("MyWebDriverFactory: browser unknown. Default option - Firefox");
-                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareChrome());
+                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareFirefox());
         }
     }
 }
