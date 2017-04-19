@@ -19,10 +19,9 @@ public class StudioHomePage extends BasePage {
         super(driver);
     }
     @Step
-    public ProjectBoardPage openStudioPage() throws InterruptedException {
+    public ProjectBoardPage openStudioPage() {
         studioLink.click();
-        Thread.sleep(5000);
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='current_account_id_chosen']/a/span")));
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("current_account_id_chosen")));
         return new ProjectBoardPage(driver);
     }
 }
