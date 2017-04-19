@@ -35,7 +35,7 @@ public class AuthTest extends BaseTest {
     @TestCaseId("1")
     @Features("Authorozation")
     @Stories("Incorrect login")
-    @Test(description = "incorrect login", dataProvider = "usersCredentialsAndExpectedErrors", dataProviderClass = DataProviderClass.class)
+    @Test(priority=1, description = "incorrect login", dataProvider = "usersCredentialsAndExpectedErrors", dataProviderClass = DataProviderClass.class)
     public void authInvalid(String login, String password, String expectedError) throws IOException {
         singIn.openSinInPage().fillSignInForm(login, password).clickSignInButton();
         String actualError = singIn.getErrorMessage();
@@ -43,7 +43,7 @@ public class AuthTest extends BaseTest {
 
     }
 
-    @TestCaseId("2")
+    /*@TestCaseId("2")
     @Features("Authorozation")
     @Stories("Successful authorization")
     @Description("successful authorization")
@@ -51,5 +51,5 @@ public class AuthTest extends BaseTest {
     public void authSuccessfulAuth(String login, String password, String expectedUserName) throws IOException {
         auth(login, password);
         Assert.assertTrue(projectBoard.getUserName().contains(expectedUserName));
-    }
+    }*/
 }
