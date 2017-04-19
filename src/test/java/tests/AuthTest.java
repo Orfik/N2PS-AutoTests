@@ -47,10 +47,9 @@ public class AuthTest extends BaseTest {
     @Features("Authorozation")
     @Stories("Successful authorization")
     @Description("successful authorization")
-    @Test(description = "successful authorization", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    @Test(priority=1, description = "successful authorization", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void authSuccessfulAuth(String login, String password, String expectedUserName) throws IOException {
         auth(login, password);
-
         Assert.assertTrue(projectBoard.getUserName().contains(expectedUserName));
     }
 }
