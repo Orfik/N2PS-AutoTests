@@ -10,7 +10,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class StudioHomePage extends BasePage {
 
-    @FindBy(css = "//*[@id='header']/div/div/a[1]")
+    @FindBy(xpath = "//*[@id='header']/div/div/a[1]")
     private WebElement studioLink;
     @FindBy(css = "a.menu_page_item.analytics")
     private WebElement analyticsLink;
