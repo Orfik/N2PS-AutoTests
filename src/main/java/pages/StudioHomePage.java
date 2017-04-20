@@ -7,10 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import static java.lang.Thread.sleep;
+
 
 public class StudioHomePage extends BasePage {
 
-    @FindBy(css = "a.menu_page_item:nth-child(2)")
+    @FindBy(css = "a.menu_page_item.studio")
     private WebElement studioLink;
     @FindBy(css = "a.menu_page_item.analytics")
     private WebElement analyticsLink;
@@ -20,8 +22,13 @@ public class StudioHomePage extends BasePage {
     }
     @Step
     public ProjectBoardPage openStudioPage() {
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         studioLink.click();
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.className("current_account_id_chosen")));
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='current_account_id_chosen']/a/span")));
         return new ProjectBoardPage(driver);
     }
 }

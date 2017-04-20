@@ -1,9 +1,17 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
+
+import java.io.IOException;
+import java.util.List;
+
+import static java.lang.Thread.sleep;
+import static org.openqa.selenium.By.cssSelector;
 
 public class SignInPage extends BasePage {
 
@@ -17,6 +25,7 @@ public class SignInPage extends BasePage {
     private WebElement signInButton;
     @FindBy(xpath = ".//div[@class='error']/p")
     private WebElement errorMessage;
+
 
     public SignInPage(WebDriver driver) {
         super(driver);
@@ -38,7 +47,7 @@ public class SignInPage extends BasePage {
     }
 
     @Step
-    public StudioHomePage clickSignInButton() {
+    public StudioHomePage clickSignInButton()  {
         signInButton.click();
         return new StudioHomePage(driver);
     }
