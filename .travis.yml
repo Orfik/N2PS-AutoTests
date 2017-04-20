@@ -28,5 +28,5 @@ script:
   - tar -xjf /tmp/firefox-50.0.tar.bz2 --directory /tmp
   - export PATH="/tmp/firefox:$PATH"
   - echo "Using firefox version `firefox --version`"
-  - chmod +x /home/travis/build/Orfik/TravisTestProject/src/test/resources/geckodriver_v.14
+  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
   - mvn test
