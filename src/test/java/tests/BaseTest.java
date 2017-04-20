@@ -36,7 +36,7 @@ public class BaseTest {
 
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void closeBrowser() {
         WebDriverFactory.dismissAll();
 
