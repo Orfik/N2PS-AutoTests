@@ -8,7 +8,7 @@
     <artifactId>N2PS-AutoTests</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <suite.name>Chrome_testng.xml</suite.name>
+        <suite.name>Chrome_test.xml</suite.name>
         <aspectj.version>1.8.5</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
@@ -30,7 +30,7 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>${project.basedir}/src/test/resources/${suite.name}</suiteXmlFile>
+                                <suiteXmlFile>/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
                             <skipTests>false</skipTests>
                             <testFailureIgnore>true</testFailureIgnore>
