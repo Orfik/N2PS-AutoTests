@@ -1,10 +1,7 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pages.MediaLibraryPage;
 import pages.ProjectBoardPage;
@@ -39,7 +36,7 @@ public class BaseTest {
 
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser() {
         WebDriverFactory.dismissAll();
 
