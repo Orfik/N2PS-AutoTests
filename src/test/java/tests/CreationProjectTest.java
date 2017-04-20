@@ -35,7 +35,7 @@ public class CreationProjectTest extends BaseTest {
     @Features("Creation projects")
     @Stories("Creation projects")
     @Test(priority=1, description = "creation new project", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
-    public void createFirstProject(String login, String password) throws IOException {
+    public void createFirstProject(String login, String password, String expectedUserName) throws IOException {
         auth("qa@storied.co", "zxc123");
         projectBoardPage.createNewProject();
         Assert.assertTrue(detailProjectPage.getProjectName().contains("Untitle"));
