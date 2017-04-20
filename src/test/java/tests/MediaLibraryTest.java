@@ -53,8 +53,8 @@ public class MediaLibraryTest extends BaseTest {
         //detailProjectPage.createFirstArticle();
        //detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeImage();
-        mediaLibraryPage.uploadFirstImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg");
-        mediaLibraryPage.uploadSecondImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg");
+        mediaLibraryPage.uploadFirstImage(System.getProperty("user.dir") + "/src/test/resources/test.jpg");
+        mediaLibraryPage.uploadSecondImage(System.getProperty("user.dir") + "/src/test/resources/test3.jpg");
         //mediaLibraryPage.deleteAsset();
         //softAssert.assertEquals();
 }
@@ -76,7 +76,7 @@ public class MediaLibraryTest extends BaseTest {
        // detailProjectPage.createFirstArticle();
        // detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeFonts();
-        mediaLibraryPage.uploadFonts(System.getProperty("user.dir") + "\\src\\test\\resources\\FontWOFF.woff");
+        mediaLibraryPage.uploadFonts(System.getProperty("user.dir") + "/src/test/resources/FontWOFF.woff");
         //softAssert.assertEquals();
     }
     /*@TestCaseId("11")
@@ -96,7 +96,7 @@ public class MediaLibraryTest extends BaseTest {
         //detailProjectPage.createFirstArticle();
         //detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeAudio();
-        mediaLibraryPage.uploadAudio(System.getProperty("user.dir") + "\\src\\test\\resources\\Audio1.mp3");
+        mediaLibraryPage.uploadAudio(System.getProperty("user.dir") + "/src/test/resources/Audio1.mp3");
     }
     /*@TestCaseId("13")
     @Features("DeleteAudio")
@@ -116,7 +116,7 @@ public class MediaLibraryTest extends BaseTest {
        // detailProjectPage.createFirstArticle();
        // detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeVideo();
-        mediaLibraryPage.uploadVideo(System.getProperty("user.dir") + "\\src\\test\\resources\\Video1.mp4");
+        mediaLibraryPage.uploadVideo(System.getProperty("user.dir") + "/src/test/resources/Video1.mp4");
     }
     /*@TestCaseId("15")
     @Features("DeleteVideo")
@@ -135,7 +135,7 @@ public class MediaLibraryTest extends BaseTest {
        // detailProjectPage.createFirstArticle();
        // detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeJs();
-        mediaLibraryPage.uploadJs(System.getProperty("user.dir") + "\\src\\test\\resources\\JS1.js");
+        mediaLibraryPage.uploadJs(System.getProperty("user.dir") + "/src/test/resources/JS1.js");
     }
     /*@TestCaseId("17")
     @Features("DeleteJs")
@@ -154,7 +154,7 @@ public class MediaLibraryTest extends BaseTest {
         //detailProjectPage.createFirstArticle();
         //detailProjectPage.openMediaLibrary();
         mediaLibraryPage.selectAssetsTypeGif();
-        mediaLibraryPage.uploadGif(System.getProperty("user.dir") + "\\src\\test\\resources\\GIF1.gif");
+        mediaLibraryPage.uploadGif(System.getProperty("user.dir") + "/src/test/resources/GIF1.gif");
     }
     /*@TestCaseId("19")
     @Features("DeleteGif")

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
+import static java.lang.Thread.sleep;
 
 
 //import static pages.DetailProjectPage.MEDIALIBRARYTITLE;
@@ -59,6 +60,11 @@ public class DetailProjectPage extends BasePage {
     }
     @Step
     public ProjectSettingsPage openProjectSettings() {
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         projectSettingsLink.click();
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Cover image']")));
         return new ProjectSettingsPage(driver);

@@ -70,7 +70,7 @@ public class ProjectSettingsTest extends BaseTest {
         //detailProjectPage.openProjectSettings();
         projectSettingsPage.openSharingOptionsTab();
         Thread.sleep(300);
-        projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg")
+        projectSettingsPage.uploadSharingImage(System.getProperty("user.dir") + "/src/test/resources/test.jpg", System.getProperty("user.dir") + "/src/test/resources/test3.jpg")
                 .setSharingOptions(fbId, graphTitle, graphDescription, graphSiteName, graphUrl, twitterMessage, emailSubject, emailBody);
         Thread.sleep(2000);
         projectSettingsPage.saveSharingOptions();
