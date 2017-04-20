@@ -2,13 +2,9 @@ package tests;
 
 import dataproviders.DataProviderClass;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.SystemClock;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.DetailProjectPage;
 import pages.ProjectBoardPage;
 import pages.MediaLibraryPage;
@@ -19,7 +15,7 @@ import ru.yandex.qatools.allure.annotations.TestCaseId;
 import java.io.IOException;
 
 @Listeners(value = AllureTestListener.class)
-public class MediaLibrary extends BaseTest {
+public class MediaLibraryTest extends BaseTest {
 
     private DetailProjectPage detailProjectPage;
     private ProjectBoardPage projectBoardPage;
