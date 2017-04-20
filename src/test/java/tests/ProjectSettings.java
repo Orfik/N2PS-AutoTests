@@ -15,7 +15,7 @@ import ru.yandex.qatools.allure.annotations.TestCaseId;
 import java.io.IOException;
 
 @Listeners(value = AllureTestListener.class)
-public class ProjectSettingsTest extends BaseTest {
+public class ProjectSettings extends BaseTest {
 
     private DetailProjectPage detailProjectPage;
     private ProjectSettingsPage projectSettingsPage;
