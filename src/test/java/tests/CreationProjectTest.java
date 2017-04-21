@@ -50,6 +50,6 @@ public class CreationProjectTest extends BaseTest {
         //auth(login, password);
         //projectBoardPage.createNewProject();
         detailProjectPage.createFirstArticle();
-        Assert.assertTrue(detailProjectPage.getArticleName().contains("layoutfortest: Untitled"));
+        Assert.assertTrue(detailProjectPage.getArticleName().contains("Blank Layout: Untitled"));
     }
 }

@@ -36,8 +36,6 @@ public class BaseTest {
 
     }
 
-
-
     public void auth(String login, String password) throws IOException {
         signIn = new SignInPage(driver);
         studioHome = new StudioHomePage(driver);

@@ -17,7 +17,7 @@ public class Browser {
         switch (browser.toUpperCase()) {
             case "FIREFOX":
                 LOG.info("MyWebDriverFactory: browser FF. ");
-                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareChrome());
+                return driver = WebDriverFactory.getDriver(PrepareDrivers.prepareFirefox());
 
             case "CHROME":
                 LOG.info("MyWebDriverFactory: browser Chrome. ");

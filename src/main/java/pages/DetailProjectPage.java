@@ -28,9 +28,9 @@ public class DetailProjectPage extends BasePage {
     private WebElement addArticleSmallIcon;
     @FindBy(xpath = "//*[@id='projects']/ul/li[1]/div[1]/ul/li[2]/a")
     private WebElement addChildArticleIcon;
-    @FindBy(xpath = "//*[@id='addNewPage']/div[1]/div[1]/div[1]/ul[1]/li[3]")
+    @FindBy(xpath = "//*[@id='addNewPage']/div[1]/div[1]/div[1]/ul[1]/li[2]")
     private WebElement storiedBetaGroupLink;
-    @FindBy(xpath = "//*[@id='designs']/div[3]/div[1]/span")
+    @FindBy(css = "#designs > div:nth-child(2) > div:nth-child(1)")
     private WebElement blankLayoutTemplate;
     @FindBy(xpath = "//li[@class='project']/figure/figcaption")
     private WebElement articleDefaultTitle;
@@ -87,13 +87,18 @@ public class DetailProjectPage extends BasePage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        builder.click(blankLayoutTemplate).doubleClick(blankLayoutTemplate).perform();
+        blankLayoutTemplate.click();
+        blankLayoutTemplate.click();
+        //blankLayoutTemplate.sendKeys("");
+        //builder.click(blankLayoutTemplate).doubleClick(blankLayoutTemplate).perform();
+
+       // builder.doubleClick(blankLayoutTemplate).perform();
         try {
             sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        fluentWait.until(ExpectedConditions.textToBePresentInElement(articleDefaultTitle, "layoutfortest: Untitled"));
+        fluentWait.until(ExpectedConditions.textToBePresentInElement(articleDefaultTitle, "Blank Layout: Untitled"));
         return this;
     }
     @Step
