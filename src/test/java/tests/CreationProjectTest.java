@@ -31,7 +31,7 @@ public class CreationProjectTest extends BaseTest {
         studioHomePage = new StudioHomePage(driver);
 
     }
-    @TestCaseId("3")
+    @TestCaseId("4")
     @Features("Creation projects")
     @Stories("Creation projects")
     @Test(priority=1, description = "creation new project", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -42,13 +42,13 @@ public class CreationProjectTest extends BaseTest {
 
     }
 
-    @TestCaseId("4")
+    @TestCaseId("3")
     @Features("Creation projects")
     @Stories("Creation First Article")
     @Test(priority=2, description = "creation first article", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void createFirstArticle(String login, String password, String expectedUserName) throws IOException{
-        //auth("qa@storied.co", "zxc123");
-        //projectBoardPage.createNewProject();
+        auth("qa@storied.co", "zxc123");
+        projectBoardPage.createNewProject();
         detailProjectPage.createFirstArticle();
         Assert.assertTrue(detailProjectPage.getArticleName().contains("Blank Layout: Untitled"));
 

@@ -74,9 +74,19 @@ public class DetailProjectPage extends BasePage {
     }
     @Step
     public DetailProjectPage createFirstArticle() {
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         addArticleBigIcon.click();
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='designs']/div[1]/div[1]/figure/div")));
         storiedBetaGroupLink.click();
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         builder.click(blankLayoutTemplate).doubleClick(blankLayoutTemplate).perform();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(articleDefaultTitle, "Blank Layout: Untitled"));
         return this;

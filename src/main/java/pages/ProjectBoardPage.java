@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import static java.lang.Thread.sleep;
+
 
 public class ProjectBoardPage extends BasePage {
 
@@ -34,6 +36,11 @@ public class ProjectBoardPage extends BasePage {
     @Step
     public DetailProjectPage createNewProject() {
         linkNewProject.click();
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DEFAULTPROJECTNAME)));
         return new DetailProjectPage(driver);
     }
