@@ -30,9 +30,8 @@ public class DeletionProject extends BaseTest {
     @Features("Deletion Project")
     @Stories("Deletion Project")
     @Test(description = "Deletion project", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
-    public void createProject(String login, String password, String expectedUserName) throws IOException {
+    public void deletionProject(String login, String password, String expectedUserName) throws IOException {
         auth("qa@storied.co", "zxc123");
         projectBoardPage.deleteProject();
-
 }
 }
