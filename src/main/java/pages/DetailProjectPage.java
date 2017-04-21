@@ -88,7 +88,12 @@ public class DetailProjectPage extends BasePage {
             e.printStackTrace();
         }
         builder.click(blankLayoutTemplate).doubleClick(blankLayoutTemplate).perform();
-        fluentWait.until(ExpectedConditions.textToBePresentInElement(articleDefaultTitle, "Blank Layout: Untitled"));
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        fluentWait.until(ExpectedConditions.textToBePresentInElement(articleDefaultTitle, "layoutfortest: Untitled"));
         return this;
     }
     @Step
