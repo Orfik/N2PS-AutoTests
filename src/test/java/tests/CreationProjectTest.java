@@ -23,14 +23,14 @@ public class CreationProjectTest extends BaseTest {
     private ProjectBoardPage projectBoardPage;
    private StudioHomePage studioHomePage;
 
-    @BeforeMethod
+    /*@BeforeMethod
     public void setUp() throws Exception {
         PageFactory.initElements(driver, this);
         projectBoardPage = new ProjectBoardPage(driver);
         detailProjectPage = new DetailProjectPage(driver);
         studioHomePage = new StudioHomePage(driver);
 
-    }
+    }*/
     @TestCaseId("3")
     @Features("Creation projects")
     @Stories("Creation projects")
