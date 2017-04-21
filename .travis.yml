@@ -7,7 +7,7 @@ jdk:
   - oraclejdk8
 
 addons:
-   firefox: "50.0" # if your project contains tests need to be run on firefox include these lines
+   firefox: "52.0.2" # if your project contains tests need to be run on firefox include these lines
 
 
 before_install:
@@ -25,8 +25,8 @@ before_script:
 
 script:
   - echo "Extracting firefox and setting PATH variable..."
-  - tar -xjf /tmp/firefox-50.0.tar.bz2 --directory /tmp
+  - tar -xjf /tmp/firefox-52.0.2.tar.bz2 --directory /tmp
   - export PATH="/tmp/firefox:$PATH"
   - echo "Using firefox version `firefox --version`"
-  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
+  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.15
   - mvn test
