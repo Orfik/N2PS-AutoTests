@@ -35,7 +35,10 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(30L, SECONDS);
 
     }
-
+    @AfterClass(alwaysRun = true)
+    public void closeBrowser() {
+        WebDriverFactory.dismissAll();
+    }
     public void auth(String login, String password) throws IOException {
         signIn = new SignInPage(driver);
         studioHome = new StudioHomePage(driver);

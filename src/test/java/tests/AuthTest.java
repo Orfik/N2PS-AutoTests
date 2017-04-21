@@ -33,10 +33,7 @@ public class AuthTest extends BaseTest {
         studioHome = new StudioHomePage(driver);
         projectBoard = new ProjectBoardPage(driver);
     }
-    @AfterClass(alwaysRun = true)
-    public void closeBrowser() {
-        WebDriverFactory.dismissAll();
-    }
+
 
     @TestCaseId("1")
     @Features("Authorozation")
@@ -57,5 +54,6 @@ public class AuthTest extends BaseTest {
     public void authSuccessfulAuth(String login, String password, String expectedUserName) throws IOException {
         auth(login, password);
         Assert.assertTrue(projectBoard.getUserName().contains(expectedUserName));
+        closeBrowser();
     }
 }
