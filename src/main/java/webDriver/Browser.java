@@ -11,7 +11,7 @@ public class Browser {
     private static final Logger LOG = Logger.getLogger("PrepareDrivers");
 
     public WebDriver getDriver(String browser) {
-        WebDriverFactory.setMode(WebDriverFactoryMode.SINGLETON);
+        WebDriverFactory.setMode(WebDriverFactoryMode.THREADLOCAL_SINGLETON);
         if (browser == null)
             browser = "UNKNOWN BROWSER INPUT";
         switch (browser.toUpperCase()) {
