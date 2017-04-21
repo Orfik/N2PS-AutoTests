@@ -83,13 +83,13 @@ public class DetailProjectPage extends BasePage {
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='designs']/div[1]/div[1]/figure/div")));
         storiedBetaGroupLink.click();
         try {
-            sleep(2000);
+            sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         builder.click(blankLayoutTemplate).doubleClick(blankLayoutTemplate).perform();
         try {
-            sleep(2000);
+            sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
