@@ -3,12 +3,14 @@ package tests;
 import dataproviders.DataProviderClass;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.ProjectBoardPage;
 import pages.SignInPage;
 import pages.StudioHomePage;
+import ru.stqa.selenium.factory.WebDriverFactory;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
@@ -30,6 +32,10 @@ public class AuthTest extends BaseTest {
         singIn = new SignInPage(driver);
         studioHome = new StudioHomePage(driver);
         projectBoard = new ProjectBoardPage(driver);
+    }
+    @AfterClass(alwaysRun = true)
+    public void closeBrowser() {
+        WebDriverFactory.dismissAll();
     }
 
     @TestCaseId("1")
