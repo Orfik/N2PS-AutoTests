@@ -17,6 +17,10 @@ before_install:
 
 before_script:
   # Selenium server
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq google-chrome-stable
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
@@ -24,9 +28,12 @@ before_script:
   #- sleep 20 # gives enough time to Selenium to start
 
 script:
-  - echo "Extracting firefox and setting PATH variable..."
-  - tar -xjf /tmp/firefox-52.0.2.tar.bz2 --directory /tmp
-  - export PATH="/tmp/firefox:$PATH"
-  - echo "Using firefox version `firefox --version`"
-  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
+  #- echo "Extracting firefox and setting PATH variable..."
+  #- tar -xjf /tmp/firefox-52.0.2.tar.bz2 --directory /tmp
+  #- export PATH="/tmp/firefox:$PATH"
+  #- echo "Using firefox version `firefox --version`"
+  #- chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
+  #
+  - export PATH="/etc/apt/sources.list.d/google.list:$PATH"
+  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/chromedriver
   - mvn test
