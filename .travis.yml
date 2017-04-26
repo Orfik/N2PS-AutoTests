@@ -28,19 +28,17 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
-  #- apt-get update -qq
-  #- apt-get install -qq google-chrome-stable
   - sleep 3
   - java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>/dev/null & # starting selenium-server
-  #- sleep 20 # gives enough time to Selenium to start
+  - sleep 20
 
 script:
-  #- echo "Extracting firefox and setting PATH variable..."
-  #- tar -xjf /tmp/firefox-52.0.2.tar.bz2 --directory /tmp
-  #- export PATH="/tmp/firefox:$PATH"
-  #- echo "Using firefox version `firefox --version`"
-  #- chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
-  #
+  - echo "Extracting firefox and setting PATH variable..."
+  - tar -xjf /tmp/firefox-52.0.2.tar.bz2 --directory /tmp
+  - export PATH="/tmp/firefox:$PATH"
+  - echo "Using firefox version `firefox --version`"
+  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
   - export PATH="$HOME/.chrome/chromium/chrome-linux/chrome:$PATH"
+  - echo "Using chrome version `chrome --version`"
   - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/chromedriver
   - mvn test
