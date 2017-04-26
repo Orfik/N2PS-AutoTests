@@ -8,24 +8,13 @@
     <artifactId>N2PS-AutoTests</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <!--<suite.name>Chrome_test.xml</suite.name>-->
+        <suite.name>Chrome_testng.xml</suite.name>
         <aspectj.version>1.8.5</aspectj.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
-        <selenium.version>3.0.1</selenium.version>
-        <surefire.version>2.19.1</surefire.version>
+        <selenium.version>3.0.0-beta3</selenium.version>
         <allure.testng.adaptor.version>1.5.0.RC2</allure.testng.adaptor.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
     <dependencies>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.9.8</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -40,6 +29,11 @@
             <groupId>ru.stqa.selenium</groupId>
             <artifactId>webdriver-factory</artifactId>
             <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>${selenium.version}</version>
         </dependency>
         <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
@@ -58,32 +52,59 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-server</artifactId>
-            <version>3.0.1</version>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>2.7.5</version>
         </dependency>
     </dependencies>
-
     <profiles>
         <profile>
             <id>ui-test</id>
             <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                        <includes>
+                            <include>application.properties</include>
+                            <include>lib/*</include>
+                        </includes>
+                    </resource>
+                </resources>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${surefire.version}</version>
+                        <version>2.19</version>
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>/src/test/resources/Chrome_suite.xml</suiteXmlFile>
+                                <suiteXmlFile>src/test/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
-                            <skipTests>false</skipTests>
                             <testFailureIgnore>true</testFailureIgnore>
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                             </argLine>
                         </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.aspectj</groupId>
+                                <artifactId>aspectjweaver</artifactId>
+                                <version>${aspectj.version}</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                     <plugin>
                         <groupId>org.eclipse.jetty</groupId>
@@ -102,14 +123,15 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.6.1</version>
+                        <configuration>
+                            <source>1.7</source>
+                            <target>1.7</target>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
         </profile>
     </profiles>
-
-
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
