@@ -1,14 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Auth Suite" verbose="1">
-    <parameter name="browser" value="firefox"/>
+    <parameter name="browser" value="chrome"/>
     <test name="Test1">
         <classes>
             <class name="tests.AuthTest"/>
         </classes>
     </test>
-    <!--<test name="Test2">
-        <classes>
-            <class name="tests.CreationProjectTest"/>
-        </classes>
-    </test>-->
+
 </suite>
