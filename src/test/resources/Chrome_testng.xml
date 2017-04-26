@@ -3,7 +3,7 @@
     <parameter name="browser" value="chrome"/>
     <test name="Test1">
         <classes>
-            <class name="tests.AuthTest"/>
+            <class name="tests.Auth"/>
         </classes>
     </test>
     <!--<test name="Test2">
