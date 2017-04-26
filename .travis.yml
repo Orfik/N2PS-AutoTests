@@ -17,7 +17,7 @@ addons:
 
 
 before_install:
-  - export CHROME_BIN=$HOME/.chrome/chromium/chrome-linux/chrome
+
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
   #- sleep 3
 
@@ -28,8 +28,8 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
-  - apt-get update -qq
-  - apt-get install -qq google-chrome-stable
+  #- apt-get update -qq
+  #- apt-get install -qq google-chrome-stable
   - sleep 3
   - java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>/dev/null & # starting selenium-server
   #- sleep 20 # gives enough time to Selenium to start
