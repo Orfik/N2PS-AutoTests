@@ -18,6 +18,11 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.11</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.21</version>
@@ -84,7 +89,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.19</version>
                         <configuration>
-                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                            <!--<redirectTestOutputToFile>true</redirectTestOutputToFile>-->
                             <suiteXmlFiles>
                                 <suiteXmlFile>${user.dir}src/test/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
