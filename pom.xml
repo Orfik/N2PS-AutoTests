@@ -68,7 +68,7 @@
         <profile>
             <id>ui-test</id>
             <build>
-                <resources>
+                <!--<resources>
                     <resource>
                         <directory>src/main/resources</directory>
                         <filtering>true</filtering>
@@ -77,7 +77,7 @@
                             <include>lib/*</include>
                         </includes>
                     </resource>
-                </resources>
+                </resources>-->
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -86,12 +86,12 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>"${user.dir}src/test/resources/${suite.name}"</suiteXmlFile>
+                                <suiteXmlFile>${user.dir}src/test/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
                             <testFailureIgnore>true</testFailureIgnore>
-                            <argLine>
+                            <!--<argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                            </argLine>
+                            </argLine>-->
                         </configuration>
                         <executions>
                             <execution>
