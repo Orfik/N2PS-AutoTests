@@ -38,7 +38,7 @@ public class BaseTest {
     @AfterClass(alwaysRun = true)
     public void closeBrowser(){
         WebDriverFactory.dismissDriver(driver);
-        WebDriverFactory.dismissAll();
+        //WebDriverFactory.dismissAll();
     }
 
     public void auth(String login, String password) throws IOException {
