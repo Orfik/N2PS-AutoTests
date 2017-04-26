@@ -17,7 +17,7 @@ addons:
 
 
 before_install:
-  export CHROME_BIN=$HOME/.chrome/chromium/chrome-linux/chrome
+  - export CHROME_BIN=$HOME/.chrome/chromium/chrome-linux/chrome
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
   #- sleep 3
 
