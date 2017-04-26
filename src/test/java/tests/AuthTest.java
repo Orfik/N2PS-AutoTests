@@ -54,7 +54,5 @@ public class AuthTest extends BaseTest {
     public void authSuccessfulAuth(String login, String password, String expectedUserName) throws IOException {
         auth(login, password);
         Assert.assertTrue(projectBoard.getUserName().contains(expectedUserName));
-        driver.quit();
-        driver.close();
-    }
+        }
 }
