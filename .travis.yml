@@ -5,24 +5,31 @@ dist: trusty
 
 jdk:
   - oraclejdk8
+addons:
+apt:
+  sources:
+    - google-chrome
+  packages:
+    - google-chrome-stable
 
 addons:
    firefox: "52.0.2" # if your project contains tests need to be run on firefox include these lines
 
 
 before_install:
+  export CHROME_BIN=$HOME/.chrome/chromium/chrome-linux/chrome
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
   #- sleep 3
 
 
 before_script:
   # Selenium server
-  - wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq google-chrome-stable
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+  - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+  - apt-get update -qq
+  - apt-get install -qq google-chrome-stable
   - sleep 3
   - java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>/dev/null & # starting selenium-server
   #- sleep 20 # gives enough time to Selenium to start
@@ -34,6 +41,6 @@ script:
   #- echo "Using firefox version `firefox --version`"
   #- chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/geckodriver_v.14
   #
-  - export PATH="/etc/apt/sources.list.d/google.list:$PATH"
+  - export PATH="$HOME/.chrome/chromium/chrome-linux/chrome:$PATH"
   - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/chromedriver
   - mvn test
