@@ -6,7 +6,7 @@
             <class name="tests.AuthTest"/>
         </classes>
     </test>
-    <test name="Test2">
+    <!--<test name="Test2">
         <classes>
             <class name="tests.CreationProjectTest"/>
         </classes>
@@ -15,5 +15,5 @@
         <classes>
             <class name="tests.DeletionProject"/>
         </classes>
-    </test>
+    </test>-->
 </suite>
