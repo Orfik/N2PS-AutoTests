@@ -14,7 +14,7 @@ public class PrepareDrivers {
     }
 
     public static DesiredCapabilities prepareChrome() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//src//test//resources//chromedriver");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//src//test//resources//chromedriver.exe");
         capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
