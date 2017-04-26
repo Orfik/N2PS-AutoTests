@@ -30,7 +30,7 @@
                         <configuration>
                             <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <suiteXmlFiles>
-                                <suiteXmlFile>${user.dir}//src//test//resources//${suite.name}</suiteXmlFile>
+                                <suiteXmlFile>${user.dir}//src//test//resources//Chrome_suite.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <skipTests>false</skipTests>
                             <testFailureIgnore>true</testFailureIgnore>
@@ -38,13 +38,13 @@
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                             </argLine>
                         </configuration>
-                        <executions>
+                        <!--<executions>
                             <execution>
                                 <goals>
                                     <goal>test</goal>
                                 </goals>
                             </execution>
-                        </executions>
+                        </executions>-->
                         <dependencies>
                             <dependency>
                                 <groupId>org.aspectj</groupId>
