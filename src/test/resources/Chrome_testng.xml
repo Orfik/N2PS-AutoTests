@@ -11,9 +11,9 @@
             <class name="tests.CreationProject"/>
         </classes>
     </test>
-   <!--<test name="Test3">
+   <test name="Test3">
         <classes>
             <class name="tests.DeletionProject"/>
         </classes>
-    </test>-->
+    </test>
 </suite>
