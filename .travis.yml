@@ -41,4 +41,5 @@ script:
   - export PATH="$HOME/.chrome/chromium/chrome-linux/chrome:$PATH"
   - echo "Using chrome version `chrome --version`"
   - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/chromedriver
+  - mvn help:active-profiles
   - mvn test

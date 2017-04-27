@@ -74,6 +74,9 @@
     <profiles>
         <profile>
             <id>ui-test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <resources>
                     <resource>

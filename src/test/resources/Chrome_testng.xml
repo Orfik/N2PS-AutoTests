@@ -7,7 +7,7 @@
             <class name="tests.Auth"/>
         </classes>
     </test>
-    <<test name="Test2">
+    <test name="Test2">
         <classes>
             <class name="tests.CreationProject"/>
         </classes>
