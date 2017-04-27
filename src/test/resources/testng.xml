@@ -3,6 +3,6 @@
 <suite name="ParentSuite">
     <suite-files>
         <suite-file path="Chrome_testng.xml"/>
-        <suite-file path="testFF.xml"/>
+        <suite-file path="FireFox_testng.xml"/>
     </suite-files>
 </suite>
