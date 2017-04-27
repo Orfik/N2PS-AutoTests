@@ -106,7 +106,7 @@
                         <executions>
                             <execution>
                                 <goals>
-                                    <goal>tests</goal>
+                                    <goal>test</goal>
                                 </goals>
                             </execution>
                         </executions>
