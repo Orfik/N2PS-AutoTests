@@ -12,8 +12,10 @@ public class ProjectPublishPage extends BasePage{
 
     private static final String JCROPAREA = ".jcrop-holder";
 
-    @FindBy (xpath = "//*[@id='project_publish']/div[1]/div[1]/h3/span")
+    @FindBy (xpath = "//div[@id='project_publish']/div/div/h3/span")
     private WebElement projectTitle;
+    @FindBy (xpath = "//input[@id='name']")
+    private WebElement projectTitleAfterClick;
     @FindBy (xpath = "//*[@id='projectPublishCoverPhoto']/div[1]/div[2]/div[1]/input")
     private WebElement coverImageInput;
     @FindBy (xpath = "//*[@id='upload-button']/a[1]")
@@ -30,13 +32,19 @@ public class ProjectPublishPage extends BasePage{
     private WebElement coverVideoInput;
     @FindBy(xpath = "//*[@id='coverVideoFocalStep']/div/div[2]/div[1]/button")
     private WebElement saveVideoCover;
-
+    @FindBy (xpath = "//*[@id='projectPublishLogo']/div[1]/div[2]/div[1]/input")
+    private WebElement projectLogo;
+    @FindBy (xpath = "//*[@id='upload-button']/a[1]")
+    private WebElement saveLogoImage;
+    @FindBy (xpath = "//div[@id='project_publish']/div/div/h3")
+    private WebElement closePublishPage;
 
 
     public ProjectPublishPage(WebDriver driver) {
 
         super(driver);
     }
+
 
 
     public ProjectPublishPage uploadProjectCoverImage (String firstImage, String imageForChanging){
@@ -57,6 +65,15 @@ public class ProjectPublishPage extends BasePage{
     }
 
     @Step
+    public ProjectPublishPage uploadProjectLogo(String logoImage){
+        projectLogo.sendKeys(logoImage);
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(JCROPAREA)));
+        saveLogoImage.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='copy_publish_embed']/span[1]")));
+        return this;
+    }
+
+    @Step
     public ProjectPublishPage selectVideoCover(){
         selectVideoCover.click();
         //fluentWait.until(ExpectedConditions.textToBePresentInElement(CoverVideoInput, "Browse project library"));
@@ -69,6 +86,14 @@ public class ProjectPublishPage extends BasePage{
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='coverVideoFocalStep']/div")));
         saveVideoCover.click();
         return this;
+    }
+    @Step
+    public ProjectPublishPage changeProjectTitle(){
+        projectTitle.click();
+        projectTitleAfterClick.clear();
+        projectTitleAfterClick.sendKeys("Test1");
+        closePublishPage.click();
+    return this;
     }
 
 

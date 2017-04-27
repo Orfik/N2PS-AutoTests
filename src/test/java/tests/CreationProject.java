@@ -21,7 +21,7 @@ public class CreationProject extends BaseTest {
 
     private DetailProjectPage detailProjectPage;
     private ProjectBoardPage projectBoardPage;
-   private StudioHomePage studioHomePage;
+    private StudioHomePage studioHomePage;
 
     @BeforeMethod
     public void setUp() throws Exception {

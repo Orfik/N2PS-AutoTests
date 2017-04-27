@@ -112,7 +112,7 @@ public class MediaLibrary extends BaseTest {
     @Test(priority=6, description = "UploadJs", dataProviderClass = DataProviderClass.class)
     public void uploadJs() throws IOException, InstantiationException{
        mediaLibraryPage.selectAssetsTypeJs();
-        mediaLibraryPage.uploadJs(System.getProperty("user.dir") + "/src/test/resources/JS1.js");
+       mediaLibraryPage.uploadJs(System.getProperty("user.dir") + "/src/test/resources/JS1.js");
     }
     /*@TestCaseId("17")
     @Features("DeleteJs")
