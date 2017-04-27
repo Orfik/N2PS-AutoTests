@@ -78,7 +78,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
            <properties>
-            <suiteXml>**/*testFF_testng.xml</suiteXml>
+            <suiteXml>**/*testng.xml</suiteXml>
             <!--<test-classes>**/*Auth.java</test-classes>
            <test-classes>**/*CreationProject.java</test-classes>-->
             </properties>
@@ -105,7 +105,7 @@
                                 <include>**/*CreationProject</include>
                             </includes>-->
                             <suiteXmlFiles>
-                                <suiteXmlFile>${user.dir}src/test/resources/testFF.xml</suiteXmlFile>
+                                <suiteXmlFile>${user.dir}src/test/resources/testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <testFailureIgnore>true</testFailureIgnore>
                             <argLine>
