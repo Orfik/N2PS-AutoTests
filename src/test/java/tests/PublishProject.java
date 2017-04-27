@@ -46,13 +46,8 @@ public class PublishProject extends BaseTest {
     @Stories("Upload Cover Video")
     @Test(description = "upload cover video", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void uploadProjectCoverVideo (String login, String password,String expectedUserName) throws IOException, InterruptedException {
-        //auth(login, password);
-        //projectBoardPage.createNewProject();
-        //detailProjectPage.createFirstArticle();
-        //detailProjectPage.openProjectPublish();
         projectPublishPage.selectVideoCover();
         projectPublishPage.uploadProjectCoverVideo(System.getProperty("user.dir") + "/src/test/resources/Video1.mp4");
-
     }
 }
 

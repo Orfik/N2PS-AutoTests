@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.yandex.qatools.allure.annotations.Step;
 
+import static java.lang.Thread.sleep;
+
 
 public class MediaLibraryPage extends BasePage {
 
@@ -97,6 +99,11 @@ public class MediaLibraryPage extends BasePage {
     @Step
     public MediaLibraryPage selectAssetsTypeAudio(){
         assetsFilter.click();
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assetsFilterAudio.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "Audio"));
         return this;
@@ -111,6 +118,11 @@ public class MediaLibraryPage extends BasePage {
     @Step
     public MediaLibraryPage selectAssetsTypeVideo(){
         assetsFilter.click();
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assetsFilterVideo.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "Video"));
         return this;
@@ -125,6 +137,11 @@ public class MediaLibraryPage extends BasePage {
     @Step
     public MediaLibraryPage selectAssetsTypeGif(){
         assetsFilter.click();
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assetsFilterGif.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "Scrollable Gif"));
         return this;
@@ -138,6 +155,11 @@ public class MediaLibraryPage extends BasePage {
     @Step
     public MediaLibraryPage selectAssetsTypeJs(){
         assetsFilter.click();
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assetsFilterJs.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "JavaScript"));
         return this;

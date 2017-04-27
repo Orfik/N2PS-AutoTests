@@ -89,10 +89,6 @@ public class DetailProjectPage extends BasePage {
         }
         blankLayoutTemplate.click();
         blankLayoutTemplate.click();
-        //blankLayoutTemplate.sendKeys("");
-        //builder.click(blankLayoutTemplate).doubleClick(blankLayoutTemplate).perform();
-
-       // builder.doubleClick(blankLayoutTemplate).perform();
         try {
             sleep(3000);
         } catch (InterruptedException e) {

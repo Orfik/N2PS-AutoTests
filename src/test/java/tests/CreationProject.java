@@ -47,8 +47,6 @@ public class CreationProject extends BaseTest {
     @Stories("Creation First Article")
     @Test(priority=2, description = "creation first article", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void createFirstArticle(String login, String password, String expectedUserName) throws IOException{
-        //auth(login, password);
-        //projectBoardPage.createNewProject();
         detailProjectPage.createFirstArticle();
         Assert.assertTrue(detailProjectPage.getArticleName().contains("Blank Layout: Untitled"));
     }
