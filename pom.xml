@@ -78,7 +78,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
            <properties>
-            <suiteXml>**/*testng.xml</suiteXml>
+            <suiteXml>${user.dir}/src/test/resources/testng.xml</suiteXml>
             <!--<test-classes>**/*Auth.java</test-classes>
            <test-classes>**/*CreationProject.java</test-classes>-->
             </properties>
@@ -104,9 +104,6 @@
                                 <include>**/*Auth.java</include>
                                 <include>**/*CreationProject</include>
                             </includes>-->
-                            <suiteXmlFiles>
-                                <suiteXmlFile>${user.dir}src/test/resources/testng.xml</suiteXmlFile>
-                            </suiteXmlFiles>
                             <testFailureIgnore>true</testFailureIgnore>
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
