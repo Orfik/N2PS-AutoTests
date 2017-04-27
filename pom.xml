@@ -74,12 +74,12 @@
     <profiles>
         <profile>
             <id>ui-test</id>
-            <activation>
+            <!--<activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                     <test-classes>**/*Auth.java</test-classes>
-            </properties>
+            </properties>-->
             <build>
                 <resources>
                     <resource>
@@ -100,6 +100,7 @@
                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
                             <includes>
                                 <include>**/*Auth.java</include>
+                                <include>**/*CreationProject</include>
                             </includes>
 
                             <!--<suiteXmlFiles>
