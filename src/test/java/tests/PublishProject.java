@@ -38,7 +38,7 @@ public class PublishProject extends BaseTest {
         projectBoardPage.createNewProject();
         detailProjectPage.createFirstArticle();
         detailProjectPage.openProjectPublish();
-        projectPublishPage.uploadProjectCoverImage(System.getProperty("user.dir") + "\\src\\test\\resources\\test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg");
+        projectPublishPage.uploadProjectCoverImage(System.getProperty("user.dir") + "/src/test/resources/test.jpg", System.getProperty("user.dir") + "\\src\\test\\resources\\test3.jpg");
 }
 
     @TestCaseId("23")
@@ -51,7 +51,7 @@ public class PublishProject extends BaseTest {
         //detailProjectPage.createFirstArticle();
         //detailProjectPage.openProjectPublish();
         projectPublishPage.selectVideoCover();
-        projectPublishPage.uploadProjectCoverVideo(System.getProperty("user.dir") + "\\src\\test\\resources\\Video1.mp4");
+        projectPublishPage.uploadProjectCoverVideo(System.getProperty("user.dir") + "/src/test/resources/Video1.mp4");
 
     }
 }

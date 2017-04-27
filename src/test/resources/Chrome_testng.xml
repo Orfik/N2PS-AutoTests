@@ -13,7 +13,12 @@
     </test>
    <test name="Test3">
         <classes>
-            <class name="tests.DeletionProject"/>
+            <class name="tests.MediaLibrary"/>
+        </classes>
+    </test>
+    <test name="Test4">
+        <classes>
+            <class name="tests.ProjectSettings"/>
         </classes>
     </test>
 </suite>
