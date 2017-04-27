@@ -77,10 +77,10 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <properties>
+            <!--<properties>
                     <test-classes>**/*Auth.java</test-classes>
                     <test-classes>**/*CreationProject.java</test-classes>
-            </properties>
+            </properties>-->
             <build>
                 <resources>
                     <resource>
@@ -99,18 +99,18 @@
                         <version>2.20</version>
                         <configuration>
                            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                            <includes>
+                           <!--<includes>
                                 <include>**/*Auth.java</include>
                                 <include>**/*CreationProject</include>
-                            </includes>
+                            </includes>-->
 
-                            <!--<suiteXmlFiles>
+                            <suiteXmlFiles>
                                 <suiteXmlFile>${user.dir}src/test/resources/${suite.name}</suiteXmlFile>
                             </suiteXmlFiles>
                             <testFailureIgnore>true</testFailureIgnore>
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                            </argLine>-->
+                            </argLine>
                         </configuration>
                         <!--<executions>
                             <execution>
