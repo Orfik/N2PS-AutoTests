@@ -74,9 +74,9 @@
     <profiles>
         <profile>
             <id>ui-test</id>
-            <!--<activation>
+            <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>-->
+            </activation>
             <properties>
                     <test-classes>**/*Auth.java</test-classes>
                     <test-classes>**/*CreationProject.java</test-classes>
