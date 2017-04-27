@@ -27,7 +27,7 @@ public class BaseTest {
     private static final Logger LOG = Logger.getLogger("MyWebDriverFactory");
 
     @Parameters("browser")
-    @BeforeClass//(alwaysRun = true)
+    @BeforeClass (alwaysRun = true)
     public void setUp(@Optional String browserName) {
         browser = new Browser();
         driver = this.browser.getDriver(browserName);
@@ -37,7 +37,6 @@ public class BaseTest {
     }
     @AfterClass(alwaysRun = true)
     public void closeBrowser(){
-        //WebDriverFactory.dismissDriver(driver);
         WebDriverFactory.dismissAll();
     }
 
