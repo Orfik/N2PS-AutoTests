@@ -76,10 +76,11 @@
             <id>ui-test</id>
             <!--<activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
+            </activation>-->
             <properties>
                     <test-classes>**/*Auth.java</test-classes>
-            </properties>-->
+                    <test-classes>**/*CreationProject.java</test-classes>
+            </properties>
             <build>
                 <resources>
                     <resource>
