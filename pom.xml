@@ -69,6 +69,8 @@
             <version>2.7.5</version>
         </dependency>
     </dependencies>
+
+
     <profiles>
         <profile>
             <id>ui-test</id>

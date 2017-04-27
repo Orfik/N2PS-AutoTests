@@ -1,17 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Auth Suite" verbose="1">
-    <parameter name="browser" value="chrome"/>
+
     <test name="Test1">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.Auth"/>
         </classes>
     </test>
-    <!--<test name="Test2">
+    <<test name="Test2">
         <classes>
-            <class name="tests.CreationProjectTest"/>
+            <class name="tests.CreationProject"/>
         </classes>
     </test>
-    <test name="Test3">
+   <!--<test name="Test3">
         <classes>
             <class name="tests.DeletionProject"/>
         </classes>
