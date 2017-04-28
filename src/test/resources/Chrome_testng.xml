@@ -21,4 +21,9 @@
             <class name="tests.ProjectSettings"/>
         </classes>
     </test>
+    <test name="Test4">
+        <classes>
+            <class name="tests.MediaLibrary"/>
+        </classes>
+    </test>
 </suite>

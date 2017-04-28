@@ -45,7 +45,7 @@ public class ProjectSettings extends BaseTest {
     @TestCaseId("6")
     @Features("Project Settings")
     @Stories("Project Settings: Logo Image")
-    @Test(priority=2, description = "ProjectSettings:LogoImage",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    @Test(priority=3, description = "ProjectSettings:LogoImage",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void uploadLogoImage(String login, String password, String expectedUserName) throws IOException, InterruptedException{
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.openProject();
@@ -57,8 +57,8 @@ public class ProjectSettings extends BaseTest {
 
     @TestCaseId("7")
     @Features("Project Settings")
-    @Stories("Project Settings: Video Cover")
-    @Test(priority=3, description = "ProjectSettings:Video Cover",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    @Stories("Project Settings:Cover Video")
+    @Test(priority=2, description = "ProjectSettings:CoverVideo",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
     public void uploadVideoCover(String login, String password, String expectedUserName) throws IOException, InterruptedException {
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.openProject();
@@ -67,12 +67,13 @@ public class ProjectSettings extends BaseTest {
         ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectSettingsCoverVideo']/div[1]/div[1]/div/div/img"));
     }
 
-    @TestCaseId("7")
+    @TestCaseId("8")
     @Features("Project Settings")
     @Stories("Project Settings: SEO")
-    @Test(priority=4, dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
+    @Test(priority=5, dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
     public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode, String additionalHtmlHeaders) throws IOException, InterruptedException {
         projectSettingsPage.openSeoTab();
+        projectSettingsPage.saveChanges();
         Thread.sleep(2000);
         projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode, additionalHtmlHeaders);
         Thread.sleep(2000);
@@ -93,14 +94,14 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(actualBingCode, bingCode, "BingCode don't math");
         softAssert.assertEquals(projectSettingsPage.getAdditionalHtmlHeaders(), additionalHtmlHeaders, "additional html headers don't match");
         softAssert.assertAll();
-        projectSettingsPage.saveChanges();
+
         //Need to add click on save button
     }
 
-    @TestCaseId("8")
+    @TestCaseId("9")
     @Features("Project Settings")
     @Stories("Project Settings: Sharing Options")
-    @Test(priority=5, dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
+    @Test(priority=9, dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.openProject();
@@ -120,6 +121,7 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(projectSettingsPage.getEmailSubject(), emailSubject);
         softAssert.assertEquals(projectSettingsPage.getEmailBody(), emailBody);
         softAssert.assertAll();
+
         //Need to add click on save button
     }
 }
