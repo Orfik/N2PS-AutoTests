@@ -98,12 +98,12 @@ public class MediaLibraryPage extends BasePage {
 
     @Step
     public MediaLibraryPage selectAssetsTypeAudio(){
-        assetsFilter.click();
         try {
             sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        assetsFilter.click();
         assetsFilterAudio.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "Audio"));
         return this;
@@ -131,17 +131,22 @@ public class MediaLibraryPage extends BasePage {
     public MediaLibraryPage uploadVideo(String firstVideo) {
         footerinputFileMediaLibrary.sendKeys(firstVideo);
         fluentWait.until(ExpectedConditions.textToBePresentInElement(firstAssetInLibrary, "Video1.mp4"));
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 
     @Step
     public MediaLibraryPage selectAssetsTypeGif(){
-        assetsFilter.click();
         try {
-            sleep(2000);
+            sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        assetsFilter.click();
         assetsFilterGif.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "Scrollable Gif"));
         return this;
@@ -154,12 +159,12 @@ public class MediaLibraryPage extends BasePage {
     }
     @Step
     public MediaLibraryPage selectAssetsTypeJs(){
-        assetsFilter.click();
         try {
-            sleep(2000);
+            sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        assetsFilter.click();
         assetsFilterJs.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "JavaScript"));
         return this;

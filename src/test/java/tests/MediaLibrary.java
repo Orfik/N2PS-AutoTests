@@ -63,7 +63,7 @@ public class MediaLibrary extends BaseTest {
     @TestCaseId("10")
     @Features("UploadFonts")
     @Stories("UploadFonts")
-    @Test(priority=3, description = "UploadFonts",  dataProviderClass = DataProviderClass.class)
+    @Test(priority=4, description = "UploadFonts",  dataProviderClass = DataProviderClass.class)
     public void uploadFonts ()throws IOException, InterruptedException {
         mediaLibraryPage.selectAssetsTypeFonts();
         mediaLibraryPage.uploadFonts(System.getProperty("user.dir") + "/src/test/resources/FontWOFF.woff");
@@ -75,10 +75,10 @@ public class MediaLibrary extends BaseTest {
     public void deleteFonts() throws IOException, InstantiationException{
         //Case steps
     }*/
-    @TestCaseId("12")
+    @TestCaseId("11")
     @Features("UploadAudio")
     @Stories("UploadAudio")
-    @Test(priority=4, description = "UploadAudio", dataProviderClass = DataProviderClass.class)
+    @Test(priority=3, description = "UploadAudio", dataProviderClass = DataProviderClass.class)
     public void uploadAudio () throws IOException, InstantiationException{
         mediaLibraryPage.selectAssetsTypeAudio();
         mediaLibraryPage.uploadAudio(System.getProperty("user.dir") + "/src/test/resources/Audio1.mp3");
@@ -91,10 +91,10 @@ public class MediaLibrary extends BaseTest {
         //Case steps
     }*/
 
-    @TestCaseId("14")
+    @TestCaseId("12")
     @Features("UploadVideo")
     @Stories("UploadVideo")
-    @Test(priority=5, description = "UploadVideo", dataProviderClass = DataProviderClass.class)
+    @Test(priority=10, description = "UploadVideo", dataProviderClass = DataProviderClass.class)
     public void uploadVideo () throws IOException, InstantiationException{
         mediaLibraryPage.selectAssetsTypeVideo();
         mediaLibraryPage.uploadVideo(System.getProperty("user.dir") + "/src/test/resources/Video1.mp4");
@@ -106,10 +106,10 @@ public class MediaLibrary extends BaseTest {
     public void deleteVideo () throws IOException, InstantiationException{
         //Case steps
     }*/
-    @TestCaseId("16")
+    @TestCaseId("13")
     @Features("UploadJs")
     @Stories("UploadJs")
-    @Test(priority=6, description = "UploadJs", dataProviderClass = DataProviderClass.class)
+    @Test(priority=5, description = "UploadJs", dataProviderClass = DataProviderClass.class)
     public void uploadJs() throws IOException, InstantiationException{
        mediaLibraryPage.selectAssetsTypeJs();
        mediaLibraryPage.uploadJs(System.getProperty("user.dir") + "/src/test/resources/JS1.js");
@@ -121,10 +121,10 @@ public class MediaLibrary extends BaseTest {
     public void deleteJs () throws IOException, InstantiationException{
         //Case steps
     }*/
-    @TestCaseId("18")
+    @TestCaseId("14")
     @Features("UploadGIF")
     @Stories("UploadGIF")
-    @Test(priority=7, description = "UploadGIF", dataProviderClass = DataProviderClass.class)
+    @Test(priority=6, description = "UploadGIF", dataProviderClass = DataProviderClass.class)
     public void uploadGIF () throws IOException, InstantiationException{
         mediaLibraryPage.selectAssetsTypeGif();
         mediaLibraryPage.uploadGif(System.getProperty("user.dir") + "/src/test/resources/GIF1.gif");
