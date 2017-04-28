@@ -1,6 +1,8 @@
 package tests;
 
 import dataproviders.DataProviderClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -30,13 +32,46 @@ public class ProjectSettings extends BaseTest {
     }
 
     @TestCaseId("5")
-    @Features("Project Settings: SEO")
-    @Stories("Project Settings: SEO")
-    @Test(dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
-    public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode, String additionalHtmlHeaders) throws IOException, InterruptedException {
+    @Features("Project Settings")
+    @Stories("Project Settings: Cover Image")
+    @Test(priority=1, description = "Project Settings: Cover Image",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    public void uploadCoverImage(String login, String password, String expectedUserName) throws IOException, InterruptedException{
         auth("qa@storied.co", "zxc123");
         projectBoardPage.openProject();
         detailProjectPage.openProjectSettings();
+        projectSettingsPage.uploadCoverImage(System.getProperty("user.dir")+"/src/test/resources/test.jpg", System.getProperty("user.dir")+"/src/test/resources/test3.jpg");
+        ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectSettingsCoverPhoto']/div[1]/div[1]/div/div/img"));
+    }
+    @TestCaseId("6")
+    @Features("Project Settings")
+    @Stories("Project Settings: Logo Image")
+    @Test(priority=2, description = "ProjectSettings:LogoImage",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    public void uploadLogoImage(String login, String password, String expectedUserName) throws IOException, InterruptedException{
+        //auth("qa@storied.co", "zxc123");
+        //projectBoardPage.openProject();
+        //detailProjectPage.openProjectSettings();
+        projectSettingsPage.uploadLogoImage(System.getProperty("user.dir")+"/src/test/resources/test.jpg");
+        ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectSettingsLogo']/div[1]/div[1]/div/div/img"));
+
+    }
+
+    @TestCaseId("7")
+    @Features("Project Settings")
+    @Stories("Project Settings: Video Cover")
+    @Test(priority=3, description = "ProjectSettings:Video Cover",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
+    public void uploadVideoCover(String login, String password, String expectedUserName) throws IOException, InterruptedException {
+        //auth("qa@storied.co", "zxc123");
+        //projectBoardPage.openProject();
+        //detailProjectPage.openProjectSettings();
+        projectSettingsPage.uploadVideoCover(System.getProperty("user.dir")+"/src/test/resources/Video1.mp4");
+        ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectSettingsCoverVideo']/div[1]/div[1]/div/div/img"));
+    }
+
+    @TestCaseId("7")
+    @Features("Project Settings")
+    @Stories("Project Settings: SEO")
+    @Test(priority=4, dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
+    public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode, String additionalHtmlHeaders) throws IOException, InterruptedException {
         projectSettingsPage.openSeoTab();
         Thread.sleep(2000);
         projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode, additionalHtmlHeaders);
@@ -58,12 +93,14 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(actualBingCode, bingCode, "BingCode don't math");
         softAssert.assertEquals(projectSettingsPage.getAdditionalHtmlHeaders(), additionalHtmlHeaders, "additional html headers don't match");
         softAssert.assertAll();
+        projectSettingsPage.saveChanges();
+        //Need to add click on save button
     }
 
-    @TestCaseId("6")
-    @Features("Project Settings: Sharing Options")
+    @TestCaseId("8")
+    @Features("Project Settings")
     @Stories("Project Settings: Sharing Options")
-    @Test(dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
+    @Test(priority=5, dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)
     public void fillSharingOptionsFields(String fbId, String graphTitle, String graphDescription, String graphSiteName, String graphUrl, String twitterMessage, String emailSubject, String emailBody) throws IOException, InterruptedException {
         //auth("qa@storied.co", "zxc123");
         //projectBoardPage.openProject();
@@ -83,6 +120,6 @@ public class ProjectSettings extends BaseTest {
         softAssert.assertEquals(projectSettingsPage.getEmailSubject(), emailSubject);
         softAssert.assertEquals(projectSettingsPage.getEmailBody(), emailBody);
         softAssert.assertAll();
-        //Need add click save button
+        //Need to add click on save button
     }
 }

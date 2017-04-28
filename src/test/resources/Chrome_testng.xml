@@ -11,12 +11,12 @@
             <class name="tests.CreationProject"/>
         </classes>
     </test>
-   <test name="Test3">
+   <!--<test name="Test4">
         <classes>
             <class name="tests.PublishProject"/>
         </classes>
-    </test>
-    <test name="Test4">
+    </test>-->
+    <test name="Test3">
         <classes>
             <class name="tests.ProjectSettings"/>
         </classes>

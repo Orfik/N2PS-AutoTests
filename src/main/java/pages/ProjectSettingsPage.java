@@ -3,20 +3,27 @@ package pages;
 import blocks.SeoBlock;
 import blocks.SharingOptionsBlock;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.io.IOException;
+import java.util.logging.XMLFormatter;
+
+import static java.lang.Thread.sleep;
 
 public class ProjectSettingsPage extends BasePage {
 
     private SeoBlock seoBlock;
     private SharingOptionsBlock sharingOptionsBlock;
 
+
     private static final String SETTINGHEADRELOCATOR = "//span[@title = 'Untitled']";
     //private static final String SHARINGOPTIONSLINKXPATH = ".//*[text()='Sharing options']";
+    private static final String JCROPAREA = ".jcrop-holder";
 
     @FindBy(xpath = SETTINGHEADRELOCATOR)
     private WebElement settingsHeader;
@@ -36,6 +43,31 @@ public class ProjectSettingsPage extends BasePage {
     private WebElement customConfigurationLink;
     @FindBy(id = "article-save-popup-save")//*[@id="article-save-popup-save"]
     private WebElement saveBtnOfBasePrompt;
+    @FindBy (xpath = "//*[@id='projectSettingsCoverPhoto']/div[1]/div[2]/div[1]/input")
+    private WebElement coverImageUploadBox;
+    @FindBy (xpath = "//*[@id='projectSettingsLogo']/div[1]/div[2]/div[1]/input")
+    private WebElement logoImageUploadBox;
+    @FindBy (xpath = "//*[@id='projectSettingsCoverBlockWrapper']/div[2]/div[1]/div[2]")
+    private WebElement selectVideoCover;
+    @FindBy(xpath = "//*[@id='projectSettingsCoverVideo']/div[1]/div[2]/div[1]/input")
+    private WebElement videoCoverUploadBox;
+    @FindBy (xpath = "//*[@id='modal4']/div[2]/div/div[1]/h3/span")
+    private WebElement projectTitle;
+    @FindBy (xpath = "//*[@id='modal4']/a")
+    private WebElement projectSettingsCloseButton;
+    @FindBy (xpath = "//*[@id='upload-button']/a[1]")
+    private WebElement saveButtonAfterJcrop;
+    @FindBy (xpath = "//*[@id='modal4']/div[2]/div/div[1]/h3/input")
+    private WebElement projectTitleAfterClik;
+    @FindBy(xpath = "//*[@id='coverVideoFocalStep']/div/div[2]/div[1]/button")
+    private WebElement saveVideoCover;
+    @FindBy(css = "#projectSettingsCoverPhoto > div.fileUploadFooter.customFileUploadFooter > div.customFooterButtonBlock.customFooterDeleteBlock > div.customFooterBlockIcon.uploadBoxDeleteIcon.deleteIcon > a")
+    private WebElement deleteCoverImageBtn;
+    @FindBy(xpath = "//*[@id='projectSettingsCoverPhoto']/div[1]/div[6]/div[2]/div[2]/div[1]")
+    private WebElement confirmDeletionCoverImage;
+    @FindBy(xpath = "//*[@id='article-save-popup-save']")
+    private WebElement saveBtnForProjectSettings;
+
 
 
     public ProjectSettingsPage(WebDriver driver) {
@@ -53,6 +85,11 @@ public class ProjectSettingsPage extends BasePage {
         return this;
    }
 
+    @Step
+    public ProjectSettingsPage saveChanges(){
+        saveBtnForProjectSettings.click();
+        return this;
+    }
 
     @Step
     public ProjectSettingsPage openSeoTab() {
@@ -190,4 +227,49 @@ public class ProjectSettingsPage extends BasePage {
         sharingOptionsBlock.uploadSharingImage(firstImage, imageForChanging);
         return this;
     }
+
+    @Step
+    public ProjectSettingsPage uploadCoverImage(String firstImage, String imageForChanging){
+        coverImageUploadBox.sendKeys(firstImage);
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(JCROPAREA)));
+        saveButtonAfterJcrop.click();
+        try {
+            sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        deleteCoverImageBtn.click();
+        confirmDeletionCoverImage.click();
+        coverImageUploadBox.sendKeys(imageForChanging);
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(JCROPAREA)));
+        saveButtonAfterJcrop.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='copy_embed']")));
+        return this;
+    }
+    @Step
+    public ProjectSettingsPage uploadLogoImage(String firstImage){
+        logoImageUploadBox.sendKeys(firstImage);
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(JCROPAREA)));
+        saveButtonAfterJcrop.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='copy_embed']")));
+        return this;
+    }
+    @Step
+    public ProjectSettingsPage uploadVideoCover(String coverVideo)
+    {
+        selectVideoCover.click();
+        videoCoverUploadBox.sendKeys(coverVideo);
+        saveVideoCover.click();
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='copy_embed']")));
+        return this;
+    }
+    @Step
+    public ProjectSettingsPage changeProjectTitle(){
+        projectTitle.click();
+        projectTitleAfterClik.clear();
+        projectTitleAfterClik.sendKeys("Test34");
+        projectSettingsCloseButton.click();
+        return this;
+    }
+
 }
