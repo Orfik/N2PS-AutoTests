@@ -45,5 +45,14 @@ script:
   - mvn help:active-profiles
   - mvn test
   - mvn site
-  - mvn jetty:run
+  #- mvn jetty:run
+deploy:
+  provider: releases
+  user: "Orfik"
+  travis encrypt password: "12031991Orfik"
+  file: "/home/travis/build/Orfik/N2PS-AutoTests/target/site/allure-maven-plugin/"
+  skip_cleanup: true
+  on:
+  tags: true
+
 
