@@ -26,11 +26,12 @@ before_script:
   # Selenium server
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome*.deb
+  #- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  #- sudo dpkg -i google-chrome*.deb
   - sleep 3
+  - sudo apt-get update > /dev/null
   - java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>/dev/null & # starting selenium-server
-  - sleep 20
+  - sleep 10
 
 script:
   - echo "Extracting firefox and setting PATH variable..."
@@ -43,3 +44,6 @@ script:
   - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/chromedriver
   - mvn help:active-profiles
   - mvn test
+  - mvn site
+  - mvn jetty:run
+
