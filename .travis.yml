@@ -49,7 +49,7 @@ script:
 deploy:
   provider: releases
   user: "Orfik"
-  travis encrypt password: "12031991Orfik"
+  password: "12031991Orfik"
   file: "/home/travis/build/Orfik/N2PS-AutoTests/target/site/allure-maven-plugin/"
   skip_cleanup: true
   on:
