@@ -55,6 +55,6 @@ deploy:
   skip_cleanup: true
   on:
   tags: true
-  repo: Orfik/N2PS-AutoTests
+  repo: Orfik/test_result
 
 
