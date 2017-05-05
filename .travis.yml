@@ -48,8 +48,6 @@ script:
   #- mvn jetty:run
 deploy:
   provider: releases
-  curl: -i https://api.github.com -u orfiik@gmail.com:12031991Orfik
-  email: orfiik@gmail.com
   api-key:
    secure: QkIyRxP6PmCm6tj6dBBX5hvIn90/UIS12KFBAu8uMLpGljTLZDYV2Hy7WhN2kerp1bktNJojdzdce1zTrdbvGIJGV/WOK47xEHBIU74qkuVjr/TAF81gPOXeL53EK4xi4NhpNyTd2EQ3HikrWQfyb0TRH2Mhts/LbyVpwAlr9Hzent7jGYLKGtCeqt1TtY20gdKLs1mzfUZfHkM9vXPe6Z26Tz37zZcpkSycLgfGhl34fF6mlgMvlI+eBnDyqycsBzP908s+TP6KQAXb4ZIacMSzfqbRRT57Uwatx5emDJwoLc0gIePI+TBR+xOzF/yWDCXM/Sfwfh8BX/zHQ2nNhioMqWbOzteW9aVp8e6dLogbv3yQ7XFvZW6xHw+1d2XrhTdU4/M5zhicbk0mCzzC1GXkw3T9OZ4CxnGeMfOS8o4Xw/jriTONiqFJZ7J2c5cUdpMi3xH9+0TZvvbASXLqfe6O766OlO6dVdb83aJAtrdME3uI+r2i+LVKd1uI+Ni5uLYoNIYAKrXy38zbHMN8zfpXkGW3DEsfXXW0WvW5TURRMZivp9Gu/h9eBTfTASLQBDqV9U5fym17ysAz5LL1H6tMKcCSiZ1nJlM/BL4Q655pwB5PQjuIZ21/6QacLqsUezUmmaaJXIXBqBO/sesRyM0Qq97i50ykqTEEj8MtCnk="
   file: "/home/travis/build/Orfik/N2PS-AutoTests/target/site/allure-maven-plugin/"
