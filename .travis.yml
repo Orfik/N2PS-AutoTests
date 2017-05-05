@@ -48,7 +48,7 @@ script:
   #- mvn jetty:run
 deploy:
   provider: releases
-  user: "Orfik"
+  email: orfiik@gmail.com
   password:
    secure: ec17mSja1WmQ2gymsnNlEe35Sl4sIsjYT5svvKwfbkq4bIZHXWpOmG0jSkJY8UVV4fq5rp+YRn7FwIWH9K+VFwdA31peHuOKfDdCHBcxkDKfqN54s/Hl4S9X1QYhe8lwFXRJxnyhyjUCdkDbVNyp/J2g5HUZN62lC1AJFPJAWAqPz5Tu6j09Z7wRJjyDDF40H8z+8CCmIx6BPtg0Mqu5ysA7oqjEZh7AdHA0e4d4/zMxo7qdWZoKtlsMnI6Fx6vxTowYerJbn2/dCqOm3ErVhE33V3r1KqCvdD/JhL2xhJFS+rXINv2SZtS4+o2WaNLn0pc1erVuSwVP+TbvG1UT7yyzg646U6uWT9djzEhm5zt82q988o+tQpc/8ddhnRypFkaZZBt4U8lf3Yh6PEbBByltpvKaW7BmJQmLS1kwpWCi8TvegQRM9qas1SA0kzwzEPZuwH30aklrP+HLlwNIybNpibXxSsRbTAyoDGPHmAClKz/P9y7DRwPDPUpx9/BxJmUxwSSYSbuxb2L2P9/xbwOZrM/8CETw4biyWhO2Ty2WgItIy+VcV1r+4vbWmjnDD/BiBN5G4qF8mBtRtnZY6gCurf38KvdjELI3L6KoayE3JDzsSRZ8FrxQIQp02iUL/y0T07v5kxTatPoYbx/7nvKAfOecPMBmLHRkDucpV3Y=
   file: "/home/travis/build/Orfik/N2PS-AutoTests/target/site/allure-maven-plugin/"
