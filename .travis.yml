@@ -50,16 +50,15 @@ script:
   #- mvn jetty:run
 
 after_success:
-  - mkdir reports && cd reports
-  - git clone --branch=master git@github.com:Orfik:N2PS-AutoTests && cd reports
+  - mkdir reports
+  #- git clone --branch=master git@github.com:Orfik:N2PS-AutoTests && cd reports
   #- git rm -rf doc/*
   #- git rm -rf report/*
   #- cp -rf ../../doc doc
   #- cp -rf ../../report report
-  - git add doc/*
-  - git add report/*
+  - git add /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
   - git commit -m "Documentation and reports updated"
-  - git push git@github.com:Orfik/N2PS-AutoTests reports
+  - git push git@github.com:Orfik/N2PS-AutoTests /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
 env:
 global:
 secure: "M2BecZ2IFdndUKGYt4nOQlcDZjz8wPGfW1Wafc3aiRW3xEDnaYhChfcR1Ioa+LoFH/X+k
