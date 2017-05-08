@@ -58,7 +58,7 @@ after_success:
   #- cp -rf ../../report report
   - git add /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
   - git commit -m "Documentation and reports updated"
-  - git push git@github.com:Orfik/N2PS-AutoTests /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
+  - git push git@github.com:Orfik/N2PS-AutoTests.git
 env:
 global:
 secure: "M2BecZ2IFdndUKGYt4nOQlcDZjz8wPGfW1Wafc3aiRW3xEDnaYhChfcR1Ioa+LoFH/X+k
