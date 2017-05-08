@@ -20,9 +20,10 @@ before_install:
 
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024" # running virtual display on desired port with desired settings
   #- sleep 3
-
+  - git rm -rf /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results/*
 
 before_script:
+  - git config --global user.token = $GITHUB_TOKEN
   # Selenium server
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -46,14 +47,26 @@ script:
   - mvn test
   - mvn site
   #- mvn jetty:run
-deploy:
-  provider: releases
-  api-key:
-   secure: QkIyRxP6PmCm6tj6dBBX5hvIn90/UIS12KFBAu8uMLpGljTLZDYV2Hy7WhN2kerp1bktNJojdzdce1zTrdbvGIJGV/WOK47xEHBIU74qkuVjr/TAF81gPOXeL53EK4xi4NhpNyTd2EQ3HikrWQfyb0TRH2Mhts/LbyVpwAlr9Hzent7jGYLKGtCeqt1TtY20gdKLs1mzfUZfHkM9vXPe6Z26Tz37zZcpkSycLgfGhl34fF6mlgMvlI+eBnDyqycsBzP908s+TP6KQAXb4ZIacMSzfqbRRT57Uwatx5emDJwoLc0gIePI+TBR+xOzF/yWDCXM/Sfwfh8BX/zHQ2nNhioMqWbOzteW9aVp8e6dLogbv3yQ7XFvZW6xHw+1d2XrhTdU4/M5zhicbk0mCzzC1GXkw3T9OZ4CxnGeMfOS8o4Xw/jriTONiqFJZ7J2c5cUdpMi3xH9+0TZvvbASXLqfe6O766OlO6dVdb83aJAtrdME3uI+r2i+LVKd1uI+Ni5uLYoNIYAKrXy38zbHMN8zfpXkGW3DEsfXXW0WvW5TURRMZivp9Gu/h9eBTfTASLQBDqV9U5fym17ysAz5LL1H6tMKcCSiZ1nJlM/BL4Q655pwB5PQjuIZ21/6QacLqsUezUmmaaJXIXBqBO/sesRyM0Qq97i50ykqTEEj8MtCnk="
-  file: "/home/travis/build/Orfik/N2PS-AutoTests/target/site/allure-maven-plugin/"
-  skip_cleanup: true
-  on:
-  tags: true
-  repo: Orfik/N2PS-AutoTests
 
-
+after_success:
+  - mkdir reports && cd reports
+  - git clone --branch=master git@github.com:Orfik:N2PS-AutoTests && cd trendets
+  #- git rm -rf doc/*
+  #- git rm -rf report/*
+  #- cp -rf ../../doc doc
+  #- cp -rf ../../report report
+  - git add doc/*
+  - git add report/*
+  - git commit -m "Documentation and reports updated"
+  - git push git@github.com:Orfik/N2PS-AutoTests gh-pages
+env:
+global:
+secure: "M2BecZ2IFdndUKGYt4nOQlcDZjz8wPGfW1Wafc3aiRW3xEDnaYhChfcR1Ioa+LoFH/X+k
+       goZEvA0PqhtdX1bYxkWhkEoUavfUABE9cQycW9Y4Tcs3/bYII/j+x+lPevyIKJfkEwU3K3A2FpRHwNyD
+       JJieUnSFOphONhKIpRuC8BcrIddnSQrM4T5SbWFTSk9xCUwIR1m9Y4+oyED7MwMxplbIoKty1lYHtSTz
+       HuOau1Z41ly5apoBxQmLK5Gxy51xJyyG9sF6r0ooKHtqzbMm72kJzlM07a1MAMl7GWJho5yqI2Zgnyi0
+       S4xyRaB3gqndXgDYO8yTsS4MSQJIemYVHLxPOu08G5BHhOQ5R5d1csA8wjwGrfDxwf+c3vcVgZqBYn7n
+       5bB0ZwKlPlrJzsVErZdAu70v+y5XCEw9AAt33m52G5Xvwe1PvNf9eNO8FST8b/O/7RSrN3sI3ph6b3wt
+       WH9hj61CcWltkHRACG/bsbszR5TTWEgtNqutLLKkkQHfkvih7XA96WMh5t1fnpPq3KW1ZC69al9covPo
+       TCFIMGp9RWbPE8hPicchAgIn5ZjR30AbZbsn/ZolVesDVNF8oorSyqEvzhFDjykqztYpI3dD/TbYV6SV
+       PuVam9Cc3eCQaBf5OVxqlPLbsHTmth/qqo7LB2s4GWNWLK/L31aQn4="
