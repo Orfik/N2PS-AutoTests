@@ -51,7 +51,7 @@ script:
 
 after_success:
   - mkdir reports && cd reports
-  - git clone --branch=master git@github.com:Orfik:N2PS-AutoTests && cd trendets
+  - git clone --branch=master git@github.com:Orfik:N2PS-AutoTests && cd reports
   #- git rm -rf doc/*
   #- git rm -rf report/*
   #- cp -rf ../../doc doc
