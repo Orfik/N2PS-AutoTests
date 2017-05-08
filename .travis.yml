@@ -46,6 +46,7 @@ script:
   - mvn help:active-profiles
   - mvn test
   - mvn site
+  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
   #- mvn jetty:run
 
 after_success:
@@ -58,7 +59,7 @@ after_success:
   - git add doc/*
   - git add report/*
   - git commit -m "Documentation and reports updated"
-  - git push git@github.com:Orfik/N2PS-AutoTests gh-pages
+  - git push git@github.com:Orfik/N2PS-AutoTests reports
 env:
 global:
 secure: "M2BecZ2IFdndUKGYt4nOQlcDZjz8wPGfW1Wafc3aiRW3xEDnaYhChfcR1Ioa+LoFH/X+k
