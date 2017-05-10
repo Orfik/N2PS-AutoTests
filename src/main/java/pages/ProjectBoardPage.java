@@ -18,7 +18,7 @@ public class ProjectBoardPage extends BasePage {
     private WebElement linkNewProject;
     @FindBy(xpath = ".//*[@id='apps-list']/div[2]")
     private WebElement firstProject;
-    @FindBy(xpath = "//div[69]/div/ul/li[4]/a")
+    @FindBy(xpath = "(//a[contains(text(),'/uE0D0')])[4]")
     private WebElement deleteButton;
     @FindBy (xpath = "//*[@id='apps-list']/div[16]/div/ul/li[4]/div/div/a[1]")
     private WebElement confirmDeletionBtn;
@@ -51,7 +51,12 @@ public class ProjectBoardPage extends BasePage {
         return new DetailProjectPage(driver);
     }
     @Step
-    public DetailProjectPage deleteProject(){
+    public DetailProjectPage deleteProject() {
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         deleteButton.click();
         confirmDeletionBtn.click();
         return new DetailProjectPage(driver);

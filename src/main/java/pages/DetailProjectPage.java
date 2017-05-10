@@ -34,7 +34,7 @@ public class DetailProjectPage extends BasePage {
     private WebElement blankLayoutTemplate;
     @FindBy(xpath = "//li[@class='project']/figure/figcaption")
     private WebElement articleDefaultTitle;
-    @FindBy(xpath = "/html/body/section/div[1]/div[1]/ul/li[4]/a")
+    @FindBy(xpath = "/html/body/section/div[1]/div[1]/ul/li[4]")
     private WebElement mediaLibraryLink;
     @FindBy(xpath = MEDIALIBRARYTITLE)
     private WebElement labelMediaLibrary;
