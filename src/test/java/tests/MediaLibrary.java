@@ -31,7 +31,7 @@ public class MediaLibrary extends BaseTest {
     }
 
 
-    @TestCaseId("7")
+    @TestCaseId("5")
     @Features("Open Library")
     @Stories("Open Library")
     @Test(priority=1, description = "open media library", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -42,7 +42,7 @@ public class MediaLibrary extends BaseTest {
     }
 
 
-    @TestCaseId("8")
+    @TestCaseId("6")
     @Features("Upload Image")
     @Stories("Upload Image")
     @Test(priority=2, description = "Upload Image", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -60,7 +60,7 @@ public class MediaLibrary extends BaseTest {
         //Case steps
     }*/
 
-    @TestCaseId("10")
+    @TestCaseId("7")
     @Features("Upload Fonts")
     @Stories("Upload Fonts")
     @Test(priority=4, description = "Upload Fonts",  dataProviderClass = DataProviderClass.class)
@@ -75,7 +75,7 @@ public class MediaLibrary extends BaseTest {
     public void deleteFonts() throws IOException, InstantiationException{
         //Case steps
     }*/
-    @TestCaseId("11")
+    @TestCaseId("8")
     @Features("Upload Audio")
     @Stories("Upload Audio")
     @Test(priority=3, description = "Upload Audio", dataProviderClass = DataProviderClass.class)
@@ -91,7 +91,7 @@ public class MediaLibrary extends BaseTest {
         //Case steps
     }*/
 
-    @TestCaseId("12")
+    @TestCaseId("9")
     @Features("Upload Video")
     @Stories("Upload Video")
     @Test(priority=10, description = "Upload Video", dataProviderClass = DataProviderClass.class)
@@ -106,7 +106,7 @@ public class MediaLibrary extends BaseTest {
     public void deleteVideo () throws IOException, InstantiationException{
         //Case steps
     }*/
-    @TestCaseId("13")
+    @TestCaseId("10")
     @Features("Upload Js")
     @Stories("Upload Js")
     @Test(priority=5, description = "Upload Js", dataProviderClass = DataProviderClass.class)
@@ -121,7 +121,7 @@ public class MediaLibrary extends BaseTest {
     public void deleteJs () throws IOException, InstantiationException{
         //Case steps
     }*/
-    @TestCaseId("14")
+    @TestCaseId("11")
     @Features("Upload GIF")
     @Stories("Upload GIF")
     @Test(priority=6, description = "Upload GIF", dataProviderClass = DataProviderClass.class)

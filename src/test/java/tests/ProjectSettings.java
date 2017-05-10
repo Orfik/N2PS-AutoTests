@@ -31,7 +31,7 @@ public class ProjectSettings extends BaseTest {
         softAssert = new SoftAssert();
     }
 
-    @TestCaseId("5")
+    @TestCaseId("12")
     @Features("Project Settings")
     @Stories("Project Settings: Cover Image")
     @Test(priority=1, description = "Project Settings: Cover Image",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -42,7 +42,7 @@ public class ProjectSettings extends BaseTest {
         projectSettingsPage.uploadCoverImage(System.getProperty("user.dir")+"/src/test/resources/test.jpg", System.getProperty("user.dir")+"/src/test/resources/test3.jpg");
         ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectSettingsCoverPhoto']/div[1]/div[1]/div/div/img"));
     }
-    @TestCaseId("6")
+    @TestCaseId("13")
     @Features("Project Settings")
     @Stories("Project Settings: Logo Image")
     @Test(priority=3, description = "ProjectSettings:LogoImage",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -55,7 +55,7 @@ public class ProjectSettings extends BaseTest {
 
     }
 
-    @TestCaseId("7")
+    @TestCaseId("14")
     @Features("Project Settings")
     @Stories("Project Settings:Cover Video")
     @Test(priority=2, description = "ProjectSettings:CoverVideo",dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -67,7 +67,7 @@ public class ProjectSettings extends BaseTest {
         ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectSettingsCoverVideo']/div[1]/div[1]/div/div/img"));
     }
 
-    @TestCaseId("8")
+    @TestCaseId("15")
     @Features("Project Settings")
     @Stories("Project Settings: SEO")
     @Test(priority=5, dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
@@ -98,7 +98,7 @@ public class ProjectSettings extends BaseTest {
         //Need to add click on save button
     }
 
-    @TestCaseId("9")
+    @TestCaseId("16")
     @Features("Project Settings")
     @Stories("Project Settings: Sharing Options")
     @Test(priority=9, dataProvider = "Sharing Options", dataProviderClass = DataProviderClass.class)

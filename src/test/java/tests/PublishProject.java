@@ -32,7 +32,7 @@ public class PublishProject extends BaseTest {
         projectPublishPage = new ProjectPublishPage(driver);
         detailProjectPage = new DetailProjectPage(driver);
     }
-    @TestCaseId("22")
+    @TestCaseId("17")
     @Features("Upload Cover Image")
     @Stories("Upload Cover Image")
     @Test(priority=1, description = "Upload Cover image", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -45,7 +45,7 @@ public class PublishProject extends BaseTest {
         ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='projectPublishCoverPhoto']/div[1]/div[1]/div/div/img"));
 }
 
-    @TestCaseId("23")
+    @TestCaseId("18")
     @Features("Upload Logo Image")
     @Stories("Upload Logo Image")
     @Test(priority=2, description = "Upload Logo Image", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -56,7 +56,7 @@ public class PublishProject extends BaseTest {
 
 
 
-    @TestCaseId("24")
+    @TestCaseId("19")
     @Features("Upload Cover Video")
     @Stories("Upload Cover Video")
     @Test(priority=3, description = "upload cover video", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
@@ -65,7 +65,7 @@ public class PublishProject extends BaseTest {
         projectPublishPage.uploadProjectCoverVideo(System.getProperty("user.dir") + "/src/test/resources/Video1.mp4");
     }
 
-    @TestCaseId("25")
+    @TestCaseId("20")
     @Features("Change Project Title")
     @Stories("Change Project Title")
     @Test(priority =4,description = "Change Project Title", dataProvider = "validUserData", dataProviderClass = DataProviderClass.class)
