@@ -38,7 +38,7 @@ public class CreationProject extends BaseTest {
     public void createFirstProject(String login, String password, String expectedUserName) throws IOException {
         auth("qa@storied.co", "zxc123");
         projectBoardPage.createNewProject();
-        Assert.assertTrue(detailProjectPage.getProjectName().contains("Untitle"));
+        Assert.assertTrue(detailProjectPage.getProjectName().contains("Test"));
 
     }
 
