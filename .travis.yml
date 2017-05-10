@@ -49,7 +49,7 @@ script:
   #- mvn jetty:run
 
 after_success:
-    - cd /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
+    - cd /home/travis/build/Orfik/N2PS-AutoTests/target/site
     - git init
     - git config user.name "${GH_USER_NAME}"
     - git config user.email "{GH_USER_EMAIL}"
