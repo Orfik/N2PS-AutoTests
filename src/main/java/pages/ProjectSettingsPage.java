@@ -120,7 +120,7 @@ public class ProjectSettingsPage extends BasePage {
     @Step
     public ProjectSettingsPage saveSeo() {
         try {
-            sleep(2000);
+            sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
