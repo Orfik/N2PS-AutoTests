@@ -45,11 +45,11 @@ script:
   - mvn help:active-profiles
   - mvn test
   - mvn site
-  - chmod +x /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
+  #- chmod +x /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
   #- mvn jetty:run
 
 after_success:
-    - cd /home/travis/build/Orfik/N2PS-AutoTests/target/site
+    - cd /home/travis/build/Orfik/N2PS-AutoTests/target/site/allure-maven-plugin
     - git init
     - git config user.name "${GH_USER_NAME}"
     - git config user.email "{GH_USER_EMAIL}"
