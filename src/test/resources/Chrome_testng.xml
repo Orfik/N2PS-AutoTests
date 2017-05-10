@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Auth Suite" verbose="1" parallel="tests" thread-count="1">
     <parameter name="browser" value="chrome"/>
-    <test name="Test1">
+    <test name="Authorization">
         <classes>
             <class name="tests.Auth"/>
         </classes>
     </test>
-    <test name="Test2">
+    <test name="Creation Project">
         <classes>
             <class name="tests.CreationProject"/>
         </classes>
@@ -16,12 +16,12 @@
             <class name="tests.PublishProject"/>
         </classes>
     </test>-->
-    <test name="Test3">
+    <test name="Project Settings">
         <classes>
             <class name="tests.ProjectSettings"/>
         </classes>
     </test>
-    <test name="Test4">
+    <test name="MediaLibrary">
         <classes>
             <class name="tests.MediaLibrary"/>
         </classes>
