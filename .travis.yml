@@ -23,7 +23,6 @@ before_install:
 
 
 before_script:
-  - git config --global user.token = $GITHUB_TOKEN
   # Selenium server
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -50,23 +49,10 @@ script:
   #- mvn jetty:run
 
 after_success:
-  - mkdir reports
-  #- git clone --branch=master git@github.com:Orfik:N2PS-AutoTests && cd reports
-  #- git rm -rf doc/*
-  #- git rm -rf report/*
-  #- cp -rf ../../doc doc
-  #- cp -rf ../../report report
-  - git add /home/travis/build/Orfik/N2PS-AutoTests/target/allure-results
-  - git commit -m "Documentation and reports updated"
-  - git push git@github.com:Orfik/N2PS-AutoTests.git master
-env:
-global:
-secure: "M2BecZ2IFdndUKGYt4nOQlcDZjz8wPGfW1Wafc3aiRW3xEDnaYhChfcR1Ioa+LoFH/X+k
-       goZEvA0PqhtdX1bYxkWhkEoUavfUABE9cQycW9Y4Tcs3/bYII/j+x+lPevyIKJfkEwU3K3A2FpRHwNyD
-       JJieUnSFOphONhKIpRuC8BcrIddnSQrM4T5SbWFTSk9xCUwIR1m9Y4+oyED7MwMxplbIoKty1lYHtSTz
-       HuOau1Z41ly5apoBxQmLK5Gxy51xJyyG9sF6r0ooKHtqzbMm72kJzlM07a1MAMl7GWJho5yqI2Zgnyi0
-       S4xyRaB3gqndXgDYO8yTsS4MSQJIemYVHLxPOu08G5BHhOQ5R5d1csA8wjwGrfDxwf+c3vcVgZqBYn7n
-       5bB0ZwKlPlrJzsVErZdAu70v+y5XCEw9AAt33m52G5Xvwe1PvNf9eNO8FST8b/O/7RSrN3sI3ph6b3wt
-       WH9hj61CcWltkHRACG/bsbszR5TTWEgtNqutLLKkkQHfkvih7XA96WMh5t1fnpPq3KW1ZC69al9covPo
-       TCFIMGp9RWbPE8hPicchAgIn5ZjR30AbZbsn/ZolVesDVNF8oorSyqEvzhFDjykqztYpI3dD/TbYV6SV
-       PuVam9Cc3eCQaBf5OVxqlPLbsHTmth/qqo7LB2s4GWNWLK/L31aQn4="
+    - cd allure-results
+    - git init
+    - git config user.name "${GH_USER_NAME}"
+    - git config user.email "{GH_USER_EMAIL}"
+    - git add . ; git commit -m "Deploy to GitHub Pages"
+    - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+
