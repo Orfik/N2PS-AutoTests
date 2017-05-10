@@ -73,7 +73,7 @@ public class ProjectSettings extends BaseTest {
     @Test(priority=5, dataProvider = "SEO", dataProviderClass = DataProviderClass.class)
     public void fillSeoFields(String toggle, String description, String h1, String h2, String baseUrl, String googleCode, String bingCode, String additionalHtmlHeaders) throws IOException, InterruptedException {
         projectSettingsPage.openSeoTab();
-        projectSettingsPage.saveChanges();
+        //projectSettingsPage.saveChanges();
         Thread.sleep(2000);
         projectSettingsPage.turnToggle(toggle).setSeoValues(description, h1, h2, baseUrl, googleCode, bingCode, additionalHtmlHeaders);
         Thread.sleep(2000);

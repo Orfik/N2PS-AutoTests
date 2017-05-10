@@ -93,6 +93,11 @@ public class ProjectSettingsPage extends BasePage {
 
     @Step
     public ProjectSettingsPage openSeoTab() {
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         seoLink.click();
         fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='seo_crawl_id']")));
         return this;
@@ -119,11 +124,6 @@ public class ProjectSettingsPage extends BasePage {
 
     @Step
     public ProjectSettingsPage saveSeo() {
-        try {
-            sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         seoBlock.clickSave();
         return this;
     }
