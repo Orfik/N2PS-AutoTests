@@ -27,7 +27,7 @@ public class ProjectSettingsPage extends BasePage {
 
     @FindBy(xpath = SETTINGHEADRELOCATOR)
     private WebElement settingsHeader;
-    @FindBy(xpath = "//*[text()='SEO']")
+    @FindBy(xpath = "//*[@id='properties']/li[2]")
     private WebElement seoLink;
     @FindBy(xpath = "//*[text()='Sharing options']")
     private WebElement sharingOptionLink;
@@ -119,6 +119,11 @@ public class ProjectSettingsPage extends BasePage {
 
     @Step
     public ProjectSettingsPage saveSeo() {
+        try {
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         seoBlock.clickSave();
         return this;
     }
@@ -248,6 +253,11 @@ public class ProjectSettingsPage extends BasePage {
     }
     @Step
     public ProjectSettingsPage uploadLogoImage(String firstImage){
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         logoImageUploadBox.sendKeys(firstImage);
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(JCROPAREA)));
         saveButtonAfterJcrop.click();
@@ -255,8 +265,12 @@ public class ProjectSettingsPage extends BasePage {
         return this;
     }
     @Step
-    public ProjectSettingsPage uploadVideoCover(String coverVideo)
-    {
+    public ProjectSettingsPage uploadVideoCover(String coverVideo){
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         selectVideoCover.click();
         videoCoverUploadBox.sendKeys(coverVideo);
         saveVideoCover.click();
