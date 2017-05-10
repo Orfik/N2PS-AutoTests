@@ -99,6 +99,11 @@ public class DetailProjectPage extends BasePage {
     }
     @Step
     public MediaLibraryPage openMediaLibrary(){
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         mediaLibraryLink.click();
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='assets_wrapper niceScroll']")));
         return new MediaLibraryPage(driver);

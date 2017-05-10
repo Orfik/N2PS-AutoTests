@@ -61,6 +61,11 @@ public class MediaLibraryPage extends BasePage {
     }
     @Step
     public MediaLibraryPage  selectAssetsTypeImage(){
+        try {
+            sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assetsFilter.click();
         assetsFilterImage.click();
         fluentWait.until(ExpectedConditions.textToBePresentInElement(selectedFilter, "Image"));
