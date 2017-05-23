@@ -1,0 +1,92 @@
+{
+  "uid" : "f2c5421fc7f55a5d",
+  "name" : "uploadFonts",
+  "title" : "Upload fonts",
+  "time" : {
+    "start" : 1495546438486,
+    "stop" : 1495546442269,
+    "duration" : 3783
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 2
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "Upload Fonts",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "2946e37e45c08a7",
+    "name" : "Auth Suite : MediaLibrary",
+    "title" : "Auth Suite : MediaLibrary"
+  },
+  "steps" : [ {
+    "name" : "selectAssetsTypeFonts",
+    "title" : "Select assets type fonts",
+    "time" : {
+      "start" : 1495546438486,
+      "stop" : 1495546440774,
+      "duration" : 2288
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "uploadFonts[/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/FontWOFF.woff]",
+    "title" : "Upload fonts [/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/FontWOFF.woff]",
+    "time" : {
+      "start" : 1495546440774,
+      "stop" : 1495546442269,
+      "duration" : 1495
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ {
+    "name" : "7",
+    "url" : "7"
+  } ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "testId",
+    "value" : "7"
+  }, {
+    "name" : "suite-title",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "feature",
+    "value" : "Upload Fonts"
+  }, {
+    "name" : "story",
+    "value" : "Upload Fonts"
+  }, {
+    "name" : "suite-name",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "thread",
+    "value" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)"
+  }, {
+    "name" : "host",
+    "value" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  } ],
+  "parameters" : [ ]
+}

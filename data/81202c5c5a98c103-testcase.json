@@ -1,0 +1,92 @@
+{
+  "uid" : "81202c5c5a98c103",
+  "name" : "uploadJs",
+  "title" : "Upload js",
+  "time" : {
+    "start" : 1495546442271,
+    "stop" : 1495546449022,
+    "duration" : 6751
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 2
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "Upload Js",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "2946e37e45c08a7",
+    "name" : "Auth Suite : MediaLibrary",
+    "title" : "Auth Suite : MediaLibrary"
+  },
+  "steps" : [ {
+    "name" : "selectAssetsTypeJs",
+    "title" : "Select assets type js",
+    "time" : {
+      "start" : 1495546442271,
+      "stop" : 1495546447748,
+      "duration" : 5477
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "uploadJs[/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/JS1.js]",
+    "title" : "Upload js [/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/JS1.js]",
+    "time" : {
+      "start" : 1495546447749,
+      "stop" : 1495546449022,
+      "duration" : 1273
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ {
+    "name" : "10",
+    "url" : "10"
+  } ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "suite-title",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "suite-name",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "feature",
+    "value" : "Upload Js"
+  }, {
+    "name" : "thread",
+    "value" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)"
+  }, {
+    "name" : "story",
+    "value" : "Upload Js"
+  }, {
+    "name" : "host",
+    "value" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "testId",
+    "value" : "10"
+  } ],
+  "parameters" : [ ]
+}

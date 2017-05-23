@@ -1,0 +1,119 @@
+{
+  "uid" : "e5833481eeb8d041",
+  "name" : "fillSharingOptionsFields[ ,graph title test,description test, , ,twitter message,Email,email body]",
+  "title" : "Fill sharing options fields [ ,graph title test,description test, , ,twitter message,Email,email body]",
+  "time" : {
+    "start" : 1495546365694,
+    "stop" : 1495546403865,
+    "duration" : 38171
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 4
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "687707edff7b77d9",
+    "name" : "Auth Suite : Project Settings",
+    "title" : "Auth Suite : Project Settings"
+  },
+  "steps" : [ {
+    "name" : "openSharingOptionsTab",
+    "title" : "Open sharing options tab",
+    "time" : {
+      "start" : 1495546365695,
+      "stop" : 1495546397918,
+      "duration" : 32223
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "uploadSharingImage[/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/test.jpg, /home/travis/build/Orfik/N2PS-Au...]",
+    "title" : "Upload sharing image [/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/test.jpg, /home/travis/build/Orfik/N2PS-Au...]",
+    "time" : {
+      "start" : 1495546398219,
+      "stop" : 1495546400687,
+      "duration" : 2468
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "setSharingOptions[ , graph title test, description test,  ,  , twitter message, Email, email body]",
+    "title" : "Set sharing options [ , graph title test, description test,  ,  , twitter message, Email, email body]",
+    "time" : {
+      "start" : 1495546400688,
+      "stop" : 1495546401603,
+      "duration" : 915
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "saveSharingOptions",
+    "title" : "Save sharing options",
+    "time" : {
+      "start" : 1495546403603,
+      "stop" : 1495546403697,
+      "duration" : 94
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ {
+    "name" : "16",
+    "url" : "16"
+  } ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "thread",
+    "value" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)"
+  }, {
+    "name" : "suite-name",
+    "value" : "Auth Suite : Project Settings"
+  }, {
+    "name" : "host",
+    "value" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "feature",
+    "value" : "Project Settings"
+  }, {
+    "name" : "testId",
+    "value" : "16"
+  }, {
+    "name" : "story",
+    "value" : "Project Settings: Sharing Options"
+  }, {
+    "name" : "suite-title",
+    "value" : "Auth Suite : Project Settings"
+  } ],
+  "parameters" : [ ]
+}

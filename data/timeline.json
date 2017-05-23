@@ -1,0 +1,229 @@
+{
+  "hosts" : [ {
+    "title" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed",
+    "threads" : [ {
+      "title" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)",
+      "testCases" : [ {
+        "uid" : "72437f9a24195023",
+        "name" : "authInvalid[qatestllc@gmail.com,123456,Username and password combination was not found.]",
+        "title" : "Auth invalid [qatestllc@gmail.com,123456,Username and password combination was not found.]",
+        "time" : {
+          "start" : 1495546181040,
+          "stop" : 1495546182762,
+          "duration" : 1722
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "6542dfbade6a1dd0",
+        "name" : "authInvalid[dancalya+7896@gmail.com,zxc123,Your account has been removed.]",
+        "title" : "Auth invalid [dancalya+7896@gmail.com,zxc123,Your account has been removed.]",
+        "time" : {
+          "start" : 1495546182767,
+          "stop" : 1495546183831,
+          "duration" : 1064
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "c5810e4f946a7e82",
+        "name" : "authInvalid[dancalya+227@gmail.com,123456,You must confirm the email.]",
+        "title" : "Auth invalid [dancalya+227@gmail.com,123456,You must confirm the email.]",
+        "time" : {
+          "start" : 1495546183833,
+          "stop" : 1495546184813,
+          "duration" : 980
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "f934789ce155a6d0",
+        "name" : "authInvalid[dancalya+229@gmail.com,123456,Account is waiting for approval by administrator.]",
+        "title" : "Auth invalid [dancalya+229@gmail.com,123456,Account is waiting for approval by administrator.]",
+        "time" : {
+          "start" : 1495546184815,
+          "stop" : 1495546185783,
+          "duration" : 968
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "1a96a9f01645d3e",
+        "name" : "authInvalid[dancalya+2@gmail.com,123456,Your account has been blocked.]",
+        "title" : "Auth invalid [dancalya+2@gmail.com,123456,Your account has been blocked.]",
+        "time" : {
+          "start" : 1495546185785,
+          "stop" : 1495546186759,
+          "duration" : 974
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "82b36f030d996db1",
+        "name" : "authSuccessfulAuth[qa@storied.co,zxc123,company api]",
+        "title" : "Auth successful auth [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546186765,
+          "stop" : 1495546192382,
+          "duration" : 5617
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "2dd27cf81cfd90fe",
+        "name" : "createFirstProject[qa@storied.co,zxc123,company api]",
+        "title" : "Create first project [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546193585,
+          "stop" : 1495546202604,
+          "duration" : 9019
+        },
+        "severity" : "NORMAL",
+        "status" : "FAILED"
+      }, {
+        "uid" : "6db18d6a663f4289",
+        "name" : "createFirstArticle[qa@storied.co,zxc123,company api]",
+        "title" : "Create first article [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546202608,
+          "stop" : 1495546214613,
+          "duration" : 12005
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "5c2616fdb7c48340",
+        "name" : "uploadCoverImage[qa@storied.co,zxc123,company api]",
+        "title" : "Upload cover image [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546215187,
+          "stop" : 1495546282586,
+          "duration" : 67399
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
+      }, {
+        "uid" : "8f2bd21acef77856",
+        "name" : "uploadVideoCover[qa@storied.co,zxc123,company api]",
+        "title" : "Upload video cover [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546282588,
+          "stop" : 1495546319320,
+          "duration" : 36732
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
+      }, {
+        "uid" : "e8c868db3dd7f2ce",
+        "name" : "uploadLogoImage[qa@storied.co,zxc123,company api]",
+        "title" : "Upload logo image [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546319322,
+          "stop" : 1495546354600,
+          "duration" : 35278
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
+      }, {
+        "uid" : "a85a24424aac9983",
+        "name" : "fillSeoFields[on,test description,h1 test,h2 test,http://baseurl.com,111,111,wait]",
+        "title" : "Fill seo fields [on,test description,h1 test,h2 test,http://baseurl.com,111,111,wait]",
+        "time" : {
+          "start" : 1495546354602,
+          "stop" : 1495546365676,
+          "duration" : 11074
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "e5833481eeb8d041",
+        "name" : "fillSharingOptionsFields[ ,graph title test,description test, , ,twitter message,Email,email body]",
+        "title" : "Fill sharing options fields [ ,graph title test,description test, , ,twitter message,Email,email body]",
+        "time" : {
+          "start" : 1495546365694,
+          "stop" : 1495546403865,
+          "duration" : 38171
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "6d233633f79b9b",
+        "name" : "openMediaLibrary[qa@storied.co,zxc123,company api]",
+        "title" : "Open media library [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546404488,
+          "stop" : 1495546416947,
+          "duration" : 12459
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "6e8ce710f93b00b9",
+        "name" : "uploadImage[qa@storied.co,zxc123,company api]",
+        "title" : "Upload image [qa@storied.co,zxc123,company api]",
+        "time" : {
+          "start" : 1495546416949,
+          "stop" : 1495546432687,
+          "duration" : 15738
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "12a32912178feb06",
+        "name" : "uploadAudio",
+        "title" : "Upload audio",
+        "time" : {
+          "start" : 1495546432690,
+          "stop" : 1495546438484,
+          "duration" : 5794
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "f2c5421fc7f55a5d",
+        "name" : "uploadFonts",
+        "title" : "Upload fonts",
+        "time" : {
+          "start" : 1495546438486,
+          "stop" : 1495546442269,
+          "duration" : 3783
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "81202c5c5a98c103",
+        "name" : "uploadJs",
+        "title" : "Upload js",
+        "time" : {
+          "start" : 1495546442271,
+          "stop" : 1495546449022,
+          "duration" : 6751
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "9501fd2d30c2d018",
+        "name" : "uploadGIF",
+        "title" : "Upload GIF",
+        "time" : {
+          "start" : 1495546449025,
+          "stop" : 1495546514514,
+          "duration" : 65489
+        },
+        "severity" : "NORMAL",
+        "status" : "BROKEN"
+      }, {
+        "uid" : "bdb78d509ea84b85",
+        "name" : "uploadVideo",
+        "title" : "Upload video",
+        "time" : {
+          "start" : 1495546514520,
+          "stop" : 1495546522053,
+          "duration" : 7533
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}

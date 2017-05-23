@@ -1,0 +1,122 @@
+{
+  "uid" : "82b36f030d996db1",
+  "name" : "authSuccessfulAuth[qa@storied.co,zxc123,company api]",
+  "title" : "Auth successful auth [qa@storied.co,zxc123,company api]",
+  "time" : {
+    "start" : 1495546186765,
+    "stop" : 1495546192382,
+    "duration" : 5617
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 4
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "successful authorization",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "4c8bb8eee91708ab",
+    "name" : "Auth Suite : Authorization",
+    "title" : "Auth Suite : Authorization"
+  },
+  "steps" : [ {
+    "name" : "openSinInPage",
+    "title" : "Open sin in page",
+    "time" : {
+      "start" : 1495546186767,
+      "stop" : 1495546187113,
+      "duration" : 346
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "fillSignInForm[qa@storied.co, zxc123]",
+    "title" : "Fill sign in form [qa@storied.co, zxc123]",
+    "time" : {
+      "start" : 1495546187114,
+      "stop" : 1495546187414,
+      "duration" : 300
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "clickSignInButton",
+    "title" : "Click sign in button",
+    "time" : {
+      "start" : 1495546187414,
+      "stop" : 1495546187497,
+      "duration" : 83
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "openStudioPage",
+    "title" : "Open studio page",
+    "time" : {
+      "start" : 1495546187497,
+      "stop" : 1495546192326,
+      "duration" : 4829
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ {
+    "name" : "2",
+    "url" : "2"
+  } ],
+  "labels" : [ {
+    "name" : "suite-title",
+    "value" : "Auth Suite : Authorization"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "thread",
+    "value" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)"
+  }, {
+    "name" : "suite-name",
+    "value" : "Auth Suite : Authorization"
+  }, {
+    "name" : "host",
+    "value" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "story",
+    "value" : "Successful authorization"
+  }, {
+    "name" : "feature",
+    "value" : "Authorozation"
+  }, {
+    "name" : "testId",
+    "value" : "2"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,107 @@
+{
+  "uid" : "6e8ce710f93b00b9",
+  "name" : "uploadImage[qa@storied.co,zxc123,company api]",
+  "title" : "Upload image [qa@storied.co,zxc123,company api]",
+  "time" : {
+    "start" : 1495546416949,
+    "stop" : 1495546432687,
+    "duration" : 15738
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "Upload Image",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "2946e37e45c08a7",
+    "name" : "Auth Suite : MediaLibrary",
+    "title" : "Auth Suite : MediaLibrary"
+  },
+  "steps" : [ {
+    "name" : "selectAssetsTypeImage",
+    "title" : "Select assets type image",
+    "time" : {
+      "start" : 1495546416950,
+      "stop" : 1495546422277,
+      "duration" : 5327
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "uploadFirstImage[/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/test.jpg]",
+    "title" : "Upload first image [/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/test.jpg]",
+    "time" : {
+      "start" : 1495546422278,
+      "stop" : 1495546428516,
+      "duration" : 6238
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "uploadSecondImage[/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/test3.jpg]",
+    "title" : "Upload second image [/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/test3.jpg]",
+    "time" : {
+      "start" : 1495546428516,
+      "stop" : 1495546432687,
+      "duration" : 4171
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ {
+    "name" : "6",
+    "url" : "6"
+  } ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "feature",
+    "value" : "Upload Image"
+  }, {
+    "name" : "suite-title",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "testId",
+    "value" : "6"
+  }, {
+    "name" : "story",
+    "value" : "Upload Image"
+  }, {
+    "name" : "suite-name",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "thread",
+    "value" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)"
+  }, {
+    "name" : "host",
+    "value" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  } ],
+  "parameters" : [ ]
+}

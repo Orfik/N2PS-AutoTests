@@ -1,0 +1,92 @@
+{
+  "uid" : "bdb78d509ea84b85",
+  "name" : "uploadVideo",
+  "title" : "Upload video",
+  "time" : {
+    "start" : 1495546514520,
+    "stop" : 1495546522053,
+    "duration" : 7533
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 2
+  },
+  "failure" : null,
+  "description" : {
+    "value" : "Upload Video",
+    "type" : "TEXT"
+  },
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "2946e37e45c08a7",
+    "name" : "Auth Suite : MediaLibrary",
+    "title" : "Auth Suite : MediaLibrary"
+  },
+  "steps" : [ {
+    "name" : "selectAssetsTypeVideo",
+    "title" : "Select assets type video",
+    "time" : {
+      "start" : 1495546514520,
+      "stop" : 1495546518873,
+      "duration" : 4353
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "uploadVideo[/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/Video1.mp4]",
+    "title" : "Upload video [/home/travis/build/Orfik/N2PS-AutoTests/src/test/resources/Video1.mp4]",
+    "time" : {
+      "start" : 1495546518873,
+      "stop" : 1495546522053,
+      "duration" : 3180
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ {
+    "name" : "9",
+    "url" : "9"
+  } ],
+  "labels" : [ {
+    "name" : "testId",
+    "value" : "9"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "suite-title",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "feature",
+    "value" : "Upload Video"
+  }, {
+    "name" : "suite-name",
+    "value" : "Auth Suite : MediaLibrary"
+  }, {
+    "name" : "thread",
+    "value" : "7373@testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed.TestNG-tests-1(12)"
+  }, {
+    "name" : "host",
+    "value" : "testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "story",
+    "value" : "Upload Video"
+  } ],
+  "parameters" : [ ]
+}

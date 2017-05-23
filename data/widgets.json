@@ -1,0 +1,192 @@
+{
+  "hash" : "e7105c43ada45c9f6e0006854ef1a1d95249231d",
+  "plugins" : {
+    "total" : {
+      "statistic" : {
+        "total" : 20,
+        "passed" : 15,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 1,
+        "broken" : 4
+      },
+      "time" : {
+        "start" : 1495546181040,
+        "stop" : 1495546522053,
+        "duration" : 341013
+      }
+    },
+    "defects" : {
+      "totalCount" : 3,
+      "items" : [ {
+        "count" : 1,
+        "uid" : "737d6be59394eaa5",
+        "message" : "AssertionError: expected [true] but found [false]",
+        "status" : "FAILED"
+      }, {
+        "count" : 3,
+        "uid" : "80d153db65be21f2",
+        "message" : "TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='copy_embed'] (tried for 30 second(s) with 2 SECONDS interval)\nBuild info: version: 'unknown', revision: 'c7b525d', time: '2016-09-01 14:57:44 -0700'\nSystem info: host: 'testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-51-generic', java.version: '1.8.0_111'\nDriver info: driver.version: unknown",
+        "status" : "BROKEN"
+      }, {
+        "count" : 1,
+        "uid" : "49d9409f4618a9bf",
+        "message" : "TimeoutException: Expected condition failed: waiting for text ('GIF1.gif') to be present in element Proxy element for: DefaultElementLocator 'By.xpath: //*[@id='library-popup']/div[1]/div[1]/div[1]/div[3]/div/ul/li[2]/span[2]' (tried for 30 second(s) with 2 SECONDS interval)\nBuild info: version: 'unknown', revision: 'c7b525d', time: '2016-09-01 14:57:44 -0700'\nSystem info: host: 'testing-gce-bb7f7f67-e10d-4379-af1e-9c797734a6ed', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-51-generic', java.version: '1.8.0_111'\nDriver info: driver.version: unknown",
+        "status" : "BROKEN"
+      } ]
+    },
+    "xunit" : {
+      "totalCount" : 4,
+      "items" : [ {
+        "uid" : "4c8bb8eee91708ab",
+        "title" : "Auth Suite : Authorization",
+        "statistic" : {
+          "total" : 6,
+          "passed" : 6,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "uid" : "c0711b1382d6582a",
+        "title" : "Auth Suite : Creation Project",
+        "statistic" : {
+          "total" : 2,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 1,
+          "broken" : 0
+        }
+      }, {
+        "uid" : "2946e37e45c08a7",
+        "title" : "Auth Suite : MediaLibrary",
+        "statistic" : {
+          "total" : 7,
+          "passed" : 6,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 1
+        }
+      }, {
+        "uid" : "687707edff7b77d9",
+        "title" : "Auth Suite : Project Settings",
+        "statistic" : {
+          "total" : 5,
+          "passed" : 2,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 3
+        }
+      } ]
+    },
+    "behaviors" : {
+      "totalCount" : 10,
+      "items" : [ {
+        "title" : "Authorozation",
+        "statistic" : {
+          "total" : 6,
+          "passed" : 6,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Creation projects",
+        "statistic" : {
+          "total" : 2,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 1,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Open Library",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Project Settings",
+        "statistic" : {
+          "total" : 5,
+          "passed" : 2,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 3
+        }
+      }, {
+        "title" : "Upload Audio",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Upload Fonts",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Upload GIF",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 0,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 1
+        }
+      }, {
+        "title" : "Upload Image",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Upload Js",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      }, {
+        "title" : "Upload Video",
+        "statistic" : {
+          "total" : 1,
+          "passed" : 1,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 0,
+          "broken" : 0
+        }
+      } ]
+    },
+    "environment" : [ ]
+  }
+}
