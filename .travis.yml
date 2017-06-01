@@ -26,11 +26,10 @@ before_script:
   # Selenium server
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  #- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  #- sudo dpkg -i google-chrome*.deb
   - sleep 3
   - sudo apt-get update > /dev/null
-  - java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>/dev/null & # starting selenium-server
+  # starting selenium-server
+  - java -jar selenium-server-standalone-3.0.1.jar > /dev/null 2>/dev/null &
   - sleep 10
 
 script:
